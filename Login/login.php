@@ -6,9 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>aksbjb</h1>
-    <?php
-    echo "jotiba"
-    ?>
+  
+
+
 </body>
 </html>
