@@ -38,6 +38,6 @@
             </div>
         </div>
     </div>
-    <script src="index.js"></script>
+    <script src="login.js"></script>
 </body>
 </html>
