@@ -5,6 +5,9 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Login</title>
       <link rel="stylesheet" href="login.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
    </head>
    <script>
       function switchAdminLogin(){
@@ -24,7 +27,7 @@
    <body style="margin:0;padding:0">
       <div style="display:flex">
          <!-- left  -->
-         <div id="left-container" style="width:50%;">
+         <div id="left-container" style="width:45%;">
             <div id="emp-image" class="emp-image" style="width:100%;height:100%" >
                <img  src="../assets/emp.jpg" style="width:100%;height:100%" />
             </div>
@@ -33,7 +36,7 @@
             </div>
          </div>
          <!-- right -->
-         <div id="right-container" style="width:50%;flex-direction:column">
+         <div id="right-container" style="width:55%;flex-direction:column">
             <!-- EMPLOYEE FORM -->
             <div id="emp-form" style="width:100%;height:100vh">
                <div  style="display:flex;flex-direction:column;height:100%;">
