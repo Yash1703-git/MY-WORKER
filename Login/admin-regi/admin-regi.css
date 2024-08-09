@@ -1,0 +1,34 @@
+body{
+    background-color: #2C87A4;
+}
+
+.sign-up{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    margin-bottom: 20PX;
+}
+
+h3{
+    display: flex;
+   justify-content: start;
+   width: 60%;
+   font-size: 25px;
+   color: #ffff;
+}
+input{
+    height:35px;
+    width: 60%;
+    margin-top: 15px;
+    padding-left: 10px;
+    font-weight: 500;
+    font-size: 20px;
+}
+.regi-btn-2{
+    font-weight: bolder;
+        background-color: #F07969;
+        height: 48px;
+        width: 30%;
+        margin-top: 15px;
+}

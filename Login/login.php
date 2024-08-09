@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Login</title>
       <link rel="stylesheet" href="login.css">
-</head>
+   </head>
    <script>
       function switchAdminLogin(){
           document.getElementById("emp-form").style.display="none";
@@ -22,22 +22,24 @@
       }
    </script>
    <body style="margin:0;padding:0">
-      <div style="display:flex">
+      <div class="container">
          <!-- left  -->
          <div id="left-container" class="left-container" style="width:50%; height:100%">
             <div id="emp-image" class="emp-image">
                <img  src="../assets/emp.jpg" style="width:100%;height:100%" />
             </div>
             <div id="admin-image" style="width:100%;height:100%">
-               <img  src="../assets/admin-1.jpg" style="width:100%;height:100%"/>
+               <img  src="../assets/emp.jpg" style="width:100%;height:100%"/>
             </div>
          </div>
          <!-- right -->
          <div id="right-container" style="width50%;height:100%;">
             <!-- EMPLOYEE FORM -->
             <div id="emp-form">
+              
                <div class="emp-form-container">
-                  <p>EMPLOYEE LOGIN</p>
+               <h1>welcome</h1>
+                  <p class="head">EMPLOYEE LOGIN</p>
                   <form action="#" method="post">
                      <h6 for="employee-id">Employee Unique ID</h6>
                      <input type="text" id="employee-id" name="employee-id" placeholder="Enter your unique ID" required>
@@ -46,27 +48,27 @@
                      <button type="submit" class="log">LOGIN</button>
                   </form>
                   <button onclick="switchAdminLogin()" id="adminlogin-btn" class="log-2" type="submit">ADMIN LOGIN</button>
-                  
                </div>
             </div>
             <!-- ADMIN FORM  -->
-            <div id="admin-form">
-               <!-- < class="admin-form-container"> -->
-                  <p>ADMIN LOGIN</p>
+            <div id="admin-form" style="width:100%; height:100vh;overflow: hidden;">
+            <div class="emp-form-container">
+                  <p class="head" class="head-1">ADMIN LOGIN</p>
                   <form action="#" method="post">
-                     <h6 for="employee-id">Employee Unique ID</h6>
+                     <h6 for="employee-id">EMAIL ID</h6>
                      <input type="text" id="employee-id" name="employee-id" placeholder="Enter your unique ID" required>
                      <h6 for="password">Password</h6>
                      <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                     <button  type="submit" class="log">LOGIN</button>
+                     <button type="submit" class="log">LOGIN</button>
                   </form>
                   <div class="btn">
-                  <button onclick="switchEmpLogin()" id="emplogin-btn" class="log-2"  type="submit">EMPLOYEE LOGIN</button>
-                  <button onclick="switchAdminLogin()" id="adminlogin-btn" class="regi-btn" type="submit">New Registration</button>
+                    <button  onclick="switchEmpLogin()" id="emplogin-btn" class="log-2" type="submit">EMPLOY LOGIN</button>
+                    <h4><a href="./admin-regi/admin-regi.php">NEW REGISTRATION</a></h4>
                   </div>
                </div>
             </div>
-            <!--  -->
          </div>
+         <!--  -->
       </div>
+   <body>
 </html>
