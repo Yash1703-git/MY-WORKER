@@ -24,48 +24,51 @@
           document.getElementById("admin-image").style.display="none";
       }
    </script>
-   <body style="margin:0;padding:0">
-      <div style="display:flex">
+   <body>
+      <div class="container">
          <!-- left  -->
-         <div id="left-container" style="width:45%;">
-            <div id="emp-image" class="emp-image" style="width:100%;height:100%" >
+         <div id="left-container" class="left-container">
+            <div id="emp-image" class="emp-image">
                <img  src="../assets/emp.jpg" style="width:100%;height:100%" />
             </div>
-            <div id="admin-image" style="width:100%;height:100%" >
-               <img  src="../assets/admin.jpg" style="width:100%;height:100%" />
+            <div id="admin-image" style="width:100%;height:100%">
+               <img  src="../assets/admin-1.jpg" style="width:100%;height:100%"/>
             </div>
          </div>
          <!-- right -->
-         <div id="right-container" style="width:55%;flex-direction:column">
+         <div id="right-container">
             <!-- EMPLOYEE FORM -->
-            <div id="emp-form" style="width:100%;height:100vh">
-               <div  style="display:flex;flex-direction:column;height:100%;">
-                  <h2>EMPLOYEE LOGIN</h2>
+            <div id="emp-form">
+               <div class="emp-form-container">
+                  <p>EMPLOYEE LOGIN</p>
                   <form action="#" method="post">
                      <h6 for="employee-id">Employee Unique ID</h6>
                      <input type="text" id="employee-id" name="employee-id" placeholder="Enter your unique ID" required>
                      <h6 for="password">Password</h6>
                      <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                     <button type="submit">LOGIN</button>
+                     <button type="submit">LOGIN</button><button onclick="switchAdminLogin()" id="adminlogin-btn" type="submit">ADMIN LOGIN</button>
+                     </div>
+                   
                   </form>
-                  <button onclick="switchAdminLogin()" id="adminlogin-btn" type="submit">ADMIN LOGIN</button>
+                  <!-- <button onclick="switchAdminLogin()" id="adminlogin-btn" type="submit">ADMIN LOGIN</button> -->
                </div>
             </div>
             <!-- ADMIN FORM  -->
-            <div id="admin-form" style="width:100%;height:100vh">
-               <div  style="display:flex;flex-direction:column;height:100%;">
-                  <h2>ADMIN LOGIN</h2>
+            <div id="admin-form">
+               < class="admin-form-container">
+                  <p>ADMIN LOGIN</p>
                   <form action="#" method="post">
-                     <h6 for="employee-id">Employee Unique ID</h6>
-                     <input type="text" id="employee-id" name="employee-id" placeholder="Enter your unique ID" required>
+                     <h6 for="employee-id">Email ID/ Mobile No.</h6>
+                     <input type="email/No" id="employee-id" name="employee-id" placeholder="Enter Email/no" required>
                      <h6 for="password">Password</h6>
                      <input type="password" id="password" name="password" placeholder="Enter your password" required>
                      <button  type="submit">LOGIN</button>
                   </form>
                   <button onclick="switchEmpLogin()" id="emplogin-btn" type="submit">EMPLOYEE LOGIN</button>
-               </div>
-            </div>
-            <!--  -->
+                  <h3>New Register</h3>
+             </div>
+   </div>
+             <!--  -->
          </div>
       </div>
 </html>
