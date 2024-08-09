@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Login</title>
       <link rel="stylesheet" href="login.css">
-   </head>
+</head>
    <script>
       function switchAdminLogin(){
           document.getElementById("emp-form").style.display="none";
@@ -21,21 +21,21 @@
           document.getElementById("admin-image").style.display="none";
       }
    </script>
-   <body>
-      <div class="container">
+   <body style="margin:0;padding:0">
+      <div style="display:flex">
          <!-- left  -->
-         <div id="left-container" style="width:45%;">
-            <div id="emp-image" class="emp-image" >
-               <img  src="../assets/emp.jpg" />
+         <div id="left-container" class="left-container">
+            <div id="emp-image" class="emp-image">
+               <img  src="../assets/emp.jpg" style="width:100%;height:100%" />
             </div>
-            <div id="admin-image" >
-               <img  src="../assets/admin-1.jpg" />
+            <div id="admin-image" style="width:100%;height:100%">
+               <img  src="../assets/admin-1.jpg" style="width:100%;height:100%"/>
             </div>
          </div>
          <!-- right -->
-         <div id="right-container"  style="width: 55%;">
+         <div id="right-container">
             <!-- EMPLOYEE FORM -->
-            <div id="emp-form" class="emp-form">
+            <div id="emp-form">
                <div class="emp-form-container">
                   <p>EMPLOYEE LOGIN</p>
                   <form action="#" method="post">
@@ -50,7 +50,7 @@
             </div>
             <!-- ADMIN FORM  -->
             <div id="admin-form">
-               <div class="admin-form-container">
+               < class="admin-form-container">
                   <p>ADMIN LOGIN</p>
                   <form action="#" method="post">
                      <h6 for="employee-id">Employee Unique ID</h6>
