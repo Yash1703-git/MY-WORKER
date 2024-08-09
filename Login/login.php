@@ -24,7 +24,7 @@
    <body style="margin:0;padding:0">
       <div style="display:flex">
          <!-- left  -->
-         <div id="left-container" class="left-container">
+         <div id="left-container" class="left-container" style="width:50%; height:100%">
             <div id="emp-image" class="emp-image">
                <img  src="../assets/emp.jpg" style="width:100%;height:100%" />
             </div>
@@ -33,7 +33,7 @@
             </div>
          </div>
          <!-- right -->
-         <div id="right-container">
+         <div id="right-container" style="width50%;height:100%;">
             <!-- EMPLOYEE FORM -->
             <div id="emp-form">
                <div class="emp-form-container">
@@ -43,23 +43,27 @@
                      <input type="text" id="employee-id" name="employee-id" placeholder="Enter your unique ID" required>
                      <h6 for="password">Password</h6>
                      <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                     <button type="submit">LOGIN</button>
+                     <button type="submit" class="log">LOGIN</button>
                   </form>
-                  <button onclick="switchAdminLogin()" id="adminlogin-btn" type="submit">ADMIN LOGIN</button>
+                  <button onclick="switchAdminLogin()" id="adminlogin-btn" class="log-2" type="submit">ADMIN LOGIN</button>
+                  
                </div>
             </div>
             <!-- ADMIN FORM  -->
             <div id="admin-form">
-               < class="admin-form-container">
+               <!-- < class="admin-form-container"> -->
                   <p>ADMIN LOGIN</p>
                   <form action="#" method="post">
                      <h6 for="employee-id">Employee Unique ID</h6>
                      <input type="text" id="employee-id" name="employee-id" placeholder="Enter your unique ID" required>
                      <h6 for="password">Password</h6>
                      <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                     <button  type="submit">LOGIN</button>
+                     <button  type="submit" class="log">LOGIN</button>
                   </form>
-                  <button onclick="switchEmpLogin()" id="emplogin-btn" type="submit">EMPLOYEE LOGIN</button>
+                  <div class="btn">
+                  <button onclick="switchEmpLogin()" id="emplogin-btn" class="log-2"  type="submit">EMPLOYEE LOGIN</button>
+                  <button onclick="switchAdminLogin()" id="adminlogin-btn" class="regi-btn" type="submit">New Registration</button>
+                  </div>
                </div>
             </div>
             <!--  -->
