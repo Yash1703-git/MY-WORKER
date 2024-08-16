@@ -153,7 +153,6 @@ button {
 
 .btn{
     display: flex;
-    
 }
 
 .regi-btn{
@@ -167,4 +166,9 @@ button {
 }
 .regi-btn:hover{
     box-shadow: inset 0 400px 0 0 rgb(215, 11, 215);
+}
+
+a{
+    text-decoration: none;
+    color: black;
 }
