@@ -37,7 +37,6 @@
          <div id="right-container" style="width50%;height:100%;">
             <!-- EMPLOYEE FORM -->
             <div id="emp-form">
-              
                <div class="emp-form-container">
                <h1>welcome</h1>
                   <p class="head">EMPLOYEE LOGIN</p>
@@ -46,7 +45,7 @@
                      <input type="text" id="employee-id" name="employee-id" placeholder="Enter your unique ID" required>
                      <h6 for="password">Password</h6>
                      <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                     <button type="submit" class="log">LOGIN</button>
+                     <button type="submit" class="log"><a href="../employe/EMP-home-pannel.php">LOGIN</a></button>
                   </form>
                   <button onclick="switchAdminLogin()" id="adminlogin-btn" class="log-2" type="submit">ADMIN LOGIN</button>
                </div>
@@ -60,7 +59,7 @@
                      <input type="text" id="employee-id" name="employee-id" placeholder="Enter your unique ID" required>
                      <h6 for="password">Password</h6>
                      <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                     <button type="submit" class="log">LOGIN</button>
+                     <button type="submit" class="log"><a href="../Admin/Admin-home-pannel/Ad-home-pnnel.php"> LOGIN</a></button>
                   </form>
                   <div class="btn">
                     <button  onclick="switchEmpLogin()" id="emplogin-btn" class="log-2" type="submit">EMPLOY LOGIN</button>
