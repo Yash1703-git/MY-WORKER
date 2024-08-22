@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Login</title>
       <link rel="stylesheet" href="login.css">
-      
+      <link rel="icon"  href="../assets/logo.jpg">
    </head>
    <script>
       function switchAdminLogin(){
@@ -34,12 +34,12 @@
             </div>
          </div>
          <!-- right -->
-         <div id="right-container" style="width50%;height:100%;">
+         <div id="right-container" style="width: 50%; height:100%;">
             <!-- EMPLOYEE FORM -->
             <div id="emp-form">
                <div class="emp-form-container">
                <h1>welcome</h1>
-                  <p class="head">EMPLOYEE LOGIN</p>
+                  <p style="right:36vh;  position: relative; font-family: Poppins;font-size: 30px;font-weight: bolder;color: #5F9FFF;background-color: #FCFCFC;padding: 10px;">EMPLOYEE LOGIN</p>
                   <form action="#" method="post">
                      <h6 for="employee-id">Employee Unique ID</h6>
                      <input type="text" id="employee-id" name="employee-id" placeholder="Enter your unique ID" required>
@@ -53,13 +53,13 @@
             <!-- ADMIN FORM  -->
             <div id="admin-form" style="width:100%; height:100vh;overflow: hidden;">
             <div class="emp-form-container">
-                  <p class="head" class="head-1">ADMIN LOGIN</p>
+                  <p style="right:39vh;  position: relative; font-family: Poppins;font-size: 30px; font-weight: bolder; color: #5F9FFF;background-color: #FCFCFC;padding: 10px;">ADMIN LOGIN</p>
                   <form action="#" method="post">
                      <h6 for="employee-id">EMAIL ID</h6>
                      <input type="text" id="employee-id" name="employee-id" placeholder="Enter your unique ID" required>
                      <h6 for="password">Password</h6>
                      <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                     <button type="submit" class="log"><a href="../Admin/Admin-home-pannel/Ad-home-pnnel.php"> LOGIN</a></button>
+                     <button type="submit" class="log"><a href="../Admin-pages/Admin-home-pannel/Ad-home-pnnel.php"> LOGIN</a></button>
                   </form>
                   <div class="btn">
                     <button  onclick="switchEmpLogin()" id="emplogin-btn" class="log-2" type="submit">EMPLOY LOGIN</button>

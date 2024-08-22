@@ -74,25 +74,7 @@ h2{
     font-family: Poppins;
     font-weight: 800;
 }
-.head{
-    color: #5F9FFF;
-    padding: 5px;
-    font-family: Poppins;
-    font-size: 30px;
-    font-weight: bolder;
-    border-right: 5px solid black;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    background-color: #FCFCFC;
-    /* margin-left: -34vw;
-    padding: 8px 10px 8px 10px; */
-    position: relative;
-    left: -35%;
-}
-.head-1{
-    margin-left: -10px;
-    
-}
+
 form{
     font-family: Poppins;
     font-size: 30px;

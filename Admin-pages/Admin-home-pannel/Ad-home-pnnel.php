@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin-pannel</title>
     <link rel="stylesheet" href="Ad-home-pnnel.css">
+    <link rel="icon"  href="/assets/logo.jpg">
     <script>
         function openNav() {
           document.getElementById("mySidebar").style.width = "30%";
@@ -29,10 +30,10 @@
           </div>
           <div class="side-container">
             <a href="#"><img src="/assets/employe.png"> Employess</a>
-            <a href="#"><img src="/assets/live employe.png">Live Employess</a>
-            <a href="#"><img src="/assets/attends.png">Attendance</a>
-            <a href="#"><img src="/assets/notification.png">Notification</a>
-            <a href="#"><img src="/assets/salaerie.png">Salaries</a>  
+            <a href="#"><img src="../assets/live employe.png">Live Employess</a>
+            <a href="#"><img src="../assets/attends.png">Attendance</a>
+            <a href="#"><img src="../assets/notification.png">Notification</a>
+            <a href="#"><img src="../assets/salaerie.png">Salaries</a>  
              <button class="btn-logout" type="submit">logout</button>
           </div>
           </div>
@@ -42,7 +43,7 @@
             </div>
             <div class="pro-icon"> </div>
             <div class="profile-img">
-              <a href="#"><img src="/assets/profile.png">profile</a>
+              <a href="#"><img src="../assets/profile.png">profile</a>
             </div>
           </div>
           
