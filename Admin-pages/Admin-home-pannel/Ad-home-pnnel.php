@@ -29,12 +29,28 @@
             <a href="javascript:void(0)" class="closebtn" id="closebtn" onclick="closeNav()">×</a>
           </div>
           <div class="side-container">
-            <a href="#"><img src="/assets/employe.png"> Employess</a>
-            <a href="#"><img src="../assets/live employe.png">Live Employess</a>
-            <a href="#"><img src="../assets/attends.png">Attendance</a>
-            <a href="#"><img src="../assets/notification.png">Notification</a>
-            <a href="#"><img src="../assets/salaerie.png">Salaries</a>  
-             <button class="btn-logout" type="submit">logout</button>
+            <?php
+            
+            session_start();
+
+            $_COOKIE['adminid']=$_SESSION['adminid'];
+            if (isset($_POST["logout"])) {
+              unset($_SESSION['adminid']);
+             
+               header("Location: ../../Login/login.php");
+            //session_destroy();
+            }
+            ?>
+            <a href="#"><img src="../../assets/employe.png"> Employess </a>
+            <a href="#"><img src="../../assets/live employe.png">Live Employess</a>
+            <a href="#"><img src="../../assets/attends.png">Attendance</a>
+            <a href="#"><img src="../../assets/notification.png">Notification</a>
+            <a href="#"><img src="../../assets/salaerie.png">Salaries</a> 
+            <form method="post">  
+             <button class="btn-logout" type="submit" name="logout">logout</button> 
+      </form>
+            
+      </form>
           </div>
           </div>
           <div class="nav">
@@ -43,7 +59,7 @@
             </div>
             <div class="pro-icon"> </div>
             <div class="profile-img">
-              <a href="#"><img src="../assets/profile.png">profile</a>
+              <a href="#"><img src="../../assets/profile.png">profile</a>
             </div>
           </div>
           

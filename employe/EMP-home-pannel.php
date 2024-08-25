@@ -34,7 +34,7 @@
            <a href=""><img src="../assets/attends.png" alt="">My Attends</a>
            <a href=""><img src="../assets/notification.png" alt="">Notification</a>
            <a href=""><img src="../assets/profile.png" alt="">profile</a>
-           <button class="btn-logout" type="submit">logout</button>
+           <a class="btn-logout" href="../index.php">logout</a>
         </div>
         </div>
         <div class="Nav-bar">

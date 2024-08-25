@@ -50,14 +50,17 @@
             $serror = "*Passwords do not match!";
         } else {
             // Hash the password for security
-            $hashed_password = $upassword;
+            $hashed_password = md5($cpassword); 
 
             // Insert data into the database
-            $sql = "INSERT INTO users (ucompany, ucompany_type, uname, uemail, umobile_no, upassword) 
-                    VALUES ('$ucompany', '$ucompany_type', '$uname', '$uemail', '$umobile_no', '$hashed_password')";
+            $sql = "INSERT INTO users (ucompany, ucompany_type, urole, uname, uemail, umobile_no, upassword) 
+                    VALUES ('$ucompany', '$ucompany_type','admin' ,'$uname', '$uemail', $umobile_no, '$hashed_password')";
 
             if ($conn->query($sql) === TRUE) {
-                echo "<script type='text/javascript'>alert('New record created successfully');</script>";
+                echo "<script type='text/javascript'>alert('Account registration successfully');
+                window.location.href='../login.php';</script>";
+               
+
             } else {
                 echo "<script type='text/javascript'>alert('Error: " . $sql . "<br>" . $conn->error . "');</script>";
             }
@@ -75,7 +78,7 @@
             <input type="text" name="ucompany_type" placeholder="Company Type" >
             <input type="text" name="uname" placeholder="Admin Name" >
             <input type="email" name="uemail" placeholder="Email Id" >
-            <input type="tel" name="umobile_no" placeholder="Mobile No"  >
+            <input type="text" name="umobile_no" placeholder="Mobile No"  >
             <input type="password" name="upassword" placeholder="Password" >
             <input type="password" name="cpassword" placeholder="Confirm Password" >
             <input type="submit" value="Submit" name="submit" class="regi-btn-2" />
