@@ -111,7 +111,7 @@
                   </form>
                   <div class="btn">
                     <button  onclick="switchEmpLogin()" id="emplogin-btn" class="log-2" type="submit">EMPLOY LOGIN</button>
-                    <h4><a href="./admin-regi/admin-regi.php">NEW REGISTRATION</a></h4>
+                    <h4><a href="../Admin-pages/admin-regi/admin-regi.php">NEW REGISTRATION</a></h4>
                   </div>
                </div>
             </div>

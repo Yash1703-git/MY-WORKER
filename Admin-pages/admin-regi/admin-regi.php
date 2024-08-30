@@ -58,7 +58,7 @@
 
             if ($conn->query($sql) === TRUE) {
                 echo "<script type='text/javascript'>alert('Account registration successfully');
-                window.location.href='../login.php';</script>";
+                window.location.href='../../Login/login.php';</script>";
                
 
             } else {
