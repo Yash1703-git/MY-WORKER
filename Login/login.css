@@ -31,13 +31,13 @@ body{
 }
 
 #emp-form{
-    background-color: #5F9FFF;
-
+   
    width:100%;
-   height:100vh;
+   height:100%;
 }
 
 .emp-form-container{
+    background-color: #5F9FFF;
     display:flex;
     flex-direction:column;
     align-items: center;
@@ -54,6 +54,7 @@ body{
 }
 
 .admin-form-container{
+     background-color: #5F9FFF;
     display:flex;
     flex-direction:column;
     align-items: center;
@@ -84,10 +85,10 @@ form{
     justify-content: center;
    
 }
-form input{
-    width: 328px;
-    height: 48px;
-    
+ input{
+    /* background-color: pink; */
+    width: 100px;
+    height: 30px;
 }
     
 button {

@@ -77,7 +77,7 @@
                <img  src="../assets/emp.jpg" style="width:100%;height:100%" />
             </div>
             <div id="admin-image" style="width:100%;height:100%">
-               <img  src="../assets/admin-1.jpg" style="width:100%;height:100%"/>
+               <img  src="../assets/emp.jpg" style="width:100%;height:100%"/>
             </div>
          </div>
          <!-- right -->
@@ -89,9 +89,9 @@
                   <p style="right:36vh;  position: relative; font-family: Poppins;font-size: 30px;font-weight: bolder;color: #5F9FFF;background-color: #FCFCFC;padding: 10px;">EMPLOYEE LOGIN</p>
                   <form action="#" method="post">
                      <h6 for="employee-id">Employee Unique ID</h6>
-                     <input type="text" id="employee-id" name="employee-id" placeholder="Enter your unique ID" required>
+                     <input type="text" id="employee-id" name="employee-id" placeholder="Enter your unique ID">
                      <h6 for="password">Password</h6>
-                     <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                     <input type="password" id="password" name="password" placeholder="Enter your password">
                      <button type="submit" class="log"><a href="../employe/EMP-home-pannel.php">LOGIN</a></button>
                   </form>
                   <button onclick="switchAdminLogin()" id="adminlogin-btn" class="log-2" type="submit">ADMIN LOGIN</button>
