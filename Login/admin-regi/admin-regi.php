@@ -20,7 +20,7 @@
         $umobile_no = $_POST["umobile_no"];
         $upassword = $_POST["upassword"];
         $cpassword = $_POST["cpassword"];
-
+// llll
         // Server-side validation
         if (empty($ucompany)) {
             $serror = "*Please enter company name!";
