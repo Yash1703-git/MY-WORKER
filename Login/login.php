@@ -24,7 +24,7 @@
    </script>
    <body style="margin:0;padding:0">
    <?php
-   
+   // kkkkkk
     session_start();
    
    //check already admin logged in

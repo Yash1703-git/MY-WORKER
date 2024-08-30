@@ -12,7 +12,7 @@
           document.getElementById("main").style.marginLeft = "0px";
           document.getElementById("main").style.display="none"
         }
-       
+      //  hahah
         function closeNav() {
           document.getElementById("mySidebar").style.width = "0";
           document.getElementById("main").style.marginLeft= "0";
