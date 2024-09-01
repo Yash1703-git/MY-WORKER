@@ -54,11 +54,14 @@
          $result = mysqli_query($conn, $loginquery);  
          $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
          $count = mysqli_num_rows($result);  
+         print_r($row);
          if($count == 1){  
-           $_SESSION['adminid']=$row['uid'];
+           $_SESSION['adminid']=$row['uid'];  
+          $_SESSION['company']=$row['ucompany'];
           
+          //
            
-            echo "<script type='text/javascript'>alert('Login Success');
+            echo "<script type='text/javascript'>alert('Login Successfully');
             window.location.href='../Admin-pages/Admin-home-pannel/Ad-home-pnnel.php';</script>";
         } else{  
           echo "<script type='text/javascript'>alert('Invalid admin id and passwword');</script>";

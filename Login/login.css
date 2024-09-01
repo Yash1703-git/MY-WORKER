@@ -33,7 +33,7 @@ body{
 #emp-form{
    
    width:100%;
-   height:100%;
+   height:100vh;
 }
 
 .emp-form-container{
@@ -86,9 +86,9 @@ form{
    
 }
  input{
-    /* background-color: pink; */
-    width: 100px;
-    height: 30px;
+    background-color: pink;
+   width: 200px;
+   height: 30px;
 }
     
 button {
