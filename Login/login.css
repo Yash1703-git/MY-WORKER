@@ -85,10 +85,11 @@ form{
     justify-content: center;
    
 }
- input{
-    background-color: pink;
-   width: 200px;
-   height: 30px;
+input{
+   border-radius: 15px;
+   border:none;
+   width: 250px;
+   height: 40px;
 }
     
 button {
@@ -97,7 +98,7 @@ button {
     border-radius: 4px;
     font-weight: 600;
     margin: 0 10px;
-    width: 200px;
+    width: 250px;
     padding: 10px 0;
     margin: 20px;
     box-shadow: 0 0 20px rgba(104, 85, 224, 0.2);
@@ -151,7 +152,7 @@ button {
     box-shadow: inset 0 400px 0 0 rgb(215, 11, 215);
 }
 
-a{
+ a{
     text-decoration: none;
     color: black;
 }

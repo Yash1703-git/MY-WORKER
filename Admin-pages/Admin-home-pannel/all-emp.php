@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin-pannel</title>
     <link rel="stylesheet" href="Ad-home-pnnel.css">
+    <link rel="stylesheet" href="all-emp.css">
     <link rel="icon"  href="/assets/logo.jpg">
+    <link rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <script>
+     
         function openNav() {
           document.getElementById("mySidebar").style.width = "30%";
           document.getElementById("main").style.marginLeft = "0px";
@@ -53,9 +56,7 @@
             <a href="#"><img src="../../assets/salaerie.png">Salaries</a> 
             <form method="post">  
              <button class="btn-logout" type="submit" name="logout">logout</button> 
-      </form>
-            
-      </form>
+
           </div>
           </div>
           <div class="nav">
@@ -64,7 +65,8 @@
             </div>
             <div class="pro-icon"> </div>
             <div class="profile-img">
-              <a href="#"><img src="../../assets/profile.png">profile<?php echo $_SESSION['adminid']?></a>
+              <!-- <a href="#"><?php echo $_SESSION['adminid']?></a> -->
+              <i class="fa-solid fa-plus"></i>
             </div>
           </div>
           <?php
@@ -74,30 +76,28 @@
           $result = mysqli_query($conn, $empquery);  
           
           ?>
-         
-   <div class="container" style="width:500px;">  
-                <h3 >How to Use Mysql View in PHP Code</h3><br />                 
-                <div class="table-responsive">  
-                     <table border="1" class="table table-striped">  
-                          <tr>  
-                               <th>Name</th>  
-                               <th>Mobile Number</th>  
-                               <th>Email</th>  
-                               <th>Joining date</th>  
-                               <th>Status</th>  
-                               <th>Actions</th>  
-                          </tr>  
-                          <?php  
-                          while($row = mysqli_fetch_array($result))  
-                          {  
-                          ?>  
-                          <tr>  
-                               <td><?php echo $row["ename"]; ?></td>  
-                               <td><?php echo $row["emobile"];?></td>  
-                               <td><?php echo $row["eemail"]; ?></td>  
-                               <td><?php echo $row["ejoiningdate"]; ?></td>  
-                               <td><?php 
-                               if($row["estatus"]=="Gone"){
+          <div class="container-2" style="width:100%; height:100vh; display: flex; justify-content: center;">
+            <table>
+            
+              <tr style="background-color: green;">
+               <th>Name</th>  
+               <th>Mobile Number</th>  
+               <th>Email</th>  
+               <th>Joining date</th>  
+               <th>Status</th>  
+               <th>Actions</th>
+              </tr>
+              <?php  
+                 while($row = mysqli_fetch_array($result))  
+                  {  
+              ?>  
+                 <tr>  
+                   <td><?php echo $row["ename"]; ?></td>  
+                   <td><?php echo $row["emobile"];?></td>  
+                   <td><?php echo $row["eemail"]; ?></td>  
+                   <td><?php echo $row["ejoiningdate"]; ?></td>  
+                   <td><?php 
+                   if($row["estatus"]=="Gone"){
                                echo "i class";
                                }else{
                                 echo $row["estatus"];
@@ -108,11 +108,8 @@
                           <?php  
                           }  
                           ?>  
-                     </table>  
-                </div>  
-           </div>  
-    </div>
-   
-    
+            </table>
+          </div>
+    </div>    
 </body>
 </html>
