@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="Ad-home-pnnel.css">
     <link rel="stylesheet" href="all-emp.css">
     <link rel="icon"  href="/assets/logo.jpg">
-    <link rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="./../../assets/css/all.min.css">
     <script>
      
         function openNav() {
@@ -65,8 +65,7 @@
             </div>
             <div class="pro-icon"> </div>
             <div class="profile-img">
-              <!-- <a href="#"><?php echo $_SESSION['adminid']?></a> -->
-              <i class="fa-solid fa-plus"></i>
+           <a href="./add-emp.php"><i class="fa fa-plus"></i>Add Employee</a>  
             </div>
           </div>
           <?php
@@ -77,8 +76,8 @@
           
           ?>
           <div class="container-2" style="width:100%; height:100vh; display: flex; justify-content: center;">
+            <div>
             <table>
-            
               <tr style="background-color: green;">
                <th>Name</th>  
                <th>Mobile Number</th>  
@@ -109,6 +108,7 @@
                           }  
                           ?>  
             </table>
+            </div>
           </div>
     </div>    
 </body>

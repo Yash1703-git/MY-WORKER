@@ -24,7 +24,7 @@
    </script>
    <body style="margin:0;padding:0">
    <?php
-   // kkkkkk
+   //admin login check
     session_start();
    
    //check already admin logged in
@@ -71,6 +71,53 @@
         
       }
     $conn->close();
+   
+    // employee login chack
+
+    session_start();
+   
+   //check already admin logged in
+  
+   include_once("../db/conection.php");
+    $aerror="";
+    if (isset($_POST["submitemp"])) {
+
+      
+        // Retrieve and sanitize form inputs
+       
+        $empid = $_POST["employee-id"];
+        $emppass = $_POST["epassword"];
+    if (empty($empid)) {
+         $aerror = "*Please enter id!";
+     }
+     else if  (empty($epassword)) {
+         $aerror = "*Password cannot be empty!";
+
+     }else {   
+      $hashed_password = md5($epassword); 
+         $loginquery="SELECT * FROM employee WHERE euniquid='$empid' AND epassword='$hashed_password' ";
+         $result = mysqli_query($conn, $loginquery);  
+         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
+         $count = mysqli_num_rows($result);  
+         print_r($row);
+         if($count == 1){  
+           $_SESSION['adminid']=$row['adminid'];  
+          $_SESSION['eid']=$row['eid'];
+          
+          //
+           
+            echo "<script type='text/javascript'>alert('Login Successfully');
+            window.location.href='../Admin-pages/Admin-home-pannel/Ad-home-pnnel.php';</script>";
+        } else{  
+          echo "<script type='text/javascript'>alert('Invalid admin id and passwword');</script>";
+        }    
+
+        }
+        
+      }
+    $conn->close();
+
+
     ?>
       <div class="container">
          <!-- left  -->
@@ -93,8 +140,8 @@
                      <h6 for="employee-id">Employee Unique ID</h6>
                      <input type="text" id="employee-id" name="employee-id" placeholder="Enter your unique ID">
                      <h6 for="password">Password</h6>
-                     <input type="password" id="password" name="password" placeholder="Enter your password">
-                     <button type="submit" class="log"><a href="../employe/EMP-home-pannel.php">LOGIN</a></button>
+                     <input type="password" id="password" name="epassword" placeholder="Enter your password">
+                     <button type="submit" class="log" name="submitemp" class="log"> LOGIN</button>
                   </form>
                   <button onclick="switchAdminLogin()" id="adminlogin-btn" class="log-2" type="submit">ADMIN LOGIN</button>
                </div>

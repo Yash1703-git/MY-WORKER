@@ -1,18 +1,22 @@
 table {
-   font-size: 25px;
+   /* font-size: 15px; */
     /* border-collapse: collapse; */
     /* border-spacing: 0; */
-    width: 70%;
+    width: 100%;
     border: 2px solid #151414; 
     margin: 10px;
+    
 }
   
 th, td {
     border: 2px solid #151414;
     text-align: left;
-    padding: 8px;
+    /* padding: 8px; */
 }
-  
+ 
+tr{
+    height: 70px;
+}
 tr:nth-child(even){
     background-color: #f2f2f2
 } 

@@ -71,7 +71,17 @@
               <a href="#"><img src="../../assets/profile.png">profile<?php echo $_SESSION['adminid']?></a>
             </div>
           </div>
-          
+         <?php
+         $empquery="SELECT COUNT(ename) AS etotal FROM employees";
+           $result = mysqli_query($conn, $empquery); 
+           $row = mysqli_fetch_array($result, MYSQLI_ASSOC); 
+           $etotal = $row ["etotal"]
+         ?>
+         <h1>
+          <?php
+          echo $etotal;
+          ?>
+         </h1>
     </div>
 </body>
 </html>
