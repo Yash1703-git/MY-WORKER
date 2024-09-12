@@ -97,16 +97,16 @@
           ?>
             <p>Employees on work</p>
          </div>
-          <!-- gone qury-->
+          <!-- leave qury-->
          <?php
-         $Goneempquery="SELECT COUNT(ename) AS Gonetotal FROM employees WHERE estatus='Gone'";
-           $Goneresult = mysqli_query($conn, $Goneempquery); 
-           $Gonerow = mysqli_fetch_array($Goneresult, MYSQLI_ASSOC); 
-           $Gonetotal = $Gonerow["Gonetotal"]
+         $leaveempquery="SELECT COUNT(ename) AS leavetotal FROM employees WHERE estatus='leave'";
+           $leaveresult = mysqli_query($conn, $leaveempquery); 
+           $leaverow = mysqli_fetch_array($leaveresult, MYSQLI_ASSOC); 
+           $leavetotal = $leaverow["leavetotal"]
          ?>
           <div class="emp-box">
           <?php
-          echo $Gonetotal;
+          echo $leavetotal;
           ?>
           <p>Employees on leave</p>
          </div>

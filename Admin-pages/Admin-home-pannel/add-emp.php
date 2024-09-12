@@ -74,7 +74,7 @@
             <input type="text" name="emobile" placeholder="Enter Moblie No">
             <input type="date" name="ejoiningdate" placeholder="Joing Date">
             <input type="text" name="esalary" placeholder="Salaery">
-            <input type="text" name="estatus" placeholder="Live/Gone/Puse">
+            <input type="text" name="estatus" placeholder="Live/leave">
             <button type="submit" value="submit" name="submit">Save Me</button>
             </form>
           </div>
