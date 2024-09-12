@@ -8,8 +8,8 @@ body{
     font-family: "../fonts/poppins.ttf";
 } 
 .container{
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 }
 
 .sidebar {
@@ -111,6 +111,9 @@ margin-right: 15px;
 }
 
 .nav{
+  /* position: sticky;
+  top: 0;
+  left: 0; */
   padding: 0px 20px 0px 20px;
   display: flex;
   justify-content:space-between;
@@ -155,3 +158,29 @@ margin-right: 15px;
  border-radius: 20px;
  border: none;
 }   
+
+.emp-total{
+  /* margin: 30px; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+ 
+.emp-box{
+  color: snow;
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 150px;
+ margin: 20px;
+ background-image: url("../../assets/box-bg.jpg");
+ background-position: center;
+ background-size: cover;
+ 
+}

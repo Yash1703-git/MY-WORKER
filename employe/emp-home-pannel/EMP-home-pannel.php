@@ -18,9 +18,20 @@
           document.getElementById("main").style.marginLeft= "0";
           document.getElementById("main").style.display="block"
         }
+        
         </script>
 </head>
 <body>
+  <?php
+  session_start();
+  if (isset($_POST["logout"])) {
+    unset($_SESSION['myadminid']);
+    unset($_SESSION['eid']);  
+   
+     header("Location: ../../Login/login.php");
+  //session_destroy();
+  }
+  ?>
     <div class="container">
       <div id="mySidebar" class="sidebar">
         <div class="sidebar-nav">
@@ -29,12 +40,13 @@
           <a href="javascript:void(0)" class="closebtn" id="closebtn" onclick="closeNav()">×</a>
         </div>
         <div class="sidebar-container">
-           <a href=""><img src="../assets/Home.png" alt="">Home</a>
-           <a href=""><img src="../assets/live employe.png" alt="">My Records</a>
-           <a href=""><img src="../assets/attends.png" alt="">My Attends</a>
-           <a href=""><img src="../assets/notification.png" alt="">Notification</a>
-           <a href=""><img src="../assets/profile.png" alt="">profile</a>
-           <a class="btn-logout" href="../index.php">logout</a>
+           <a href=""><img src="./../../assets/Home.png" alt="">Home</a>
+           <a href=""><img src="./../../assets/live employe.png" alt="">My Records</a>
+           <a href=""><img src="./../../assets/attends.png" alt="">My Attends</a>
+           <a href=""><img src="./../../assets/notification.png" alt="">Notification</a>
+           <a href=""><img src="./../../assets/profile.png" alt="">profile</a>
+           <form method="post">  
+             <button class="btn-logout" type="submit" name="logout">logout</button> 
         </div>
         </div>
         <div class="Nav-bar">

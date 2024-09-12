@@ -32,6 +32,10 @@
       header("Location: ../Admin-pages/Admin-home-pannel/Ad-home-pnnel.php");
       exit(); // Always use exit() after header redirection
   }
+  if (isset($_SESSION['myadminid']) && $_SESSION['eid'] !== null) {
+   header("Location: ../employe/emp-home-pannel/EMP-home-pannel.php");
+   exit(); // Always use exit() after header redirection
+}
 
    include_once("../db/conection.php");
     $aerror="";
@@ -70,11 +74,11 @@
         }
         
       }
-    $conn->close();
+    
    
     // employee login chack
 
-    session_start();
+    
    
    //check already admin logged in
   
@@ -87,27 +91,28 @@
        
         $empid = $_POST["employee-id"];
         $emppass = $_POST["epassword"];
+      
     if (empty($empid)) {
          $aerror = "*Please enter id!";
      }
-     else if  (empty($epassword)) {
+     else if(empty($emppass)) {
          $aerror = "*Password cannot be empty!";
 
      }else {   
-      $hashed_password = md5($epassword); 
-         $loginquery="SELECT * FROM employee WHERE euniquid='$empid' AND epassword='$hashed_password' ";
+      $hashed_password = md5($emppass); 
+         $loginquery="SELECT * FROM employees WHERE euniqueid='$empid' AND epassword='$hashed_password' ";
          $result = mysqli_query($conn, $loginquery);  
          $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
          $count = mysqli_num_rows($result);  
          print_r($row);
          if($count == 1){  
-           $_SESSION['adminid']=$row['adminid'];  
+           $_SESSION['myadminid']=$row['adminid'];  
           $_SESSION['eid']=$row['eid'];
           
           //
            
             echo "<script type='text/javascript'>alert('Login Successfully');
-            window.location.href='../Admin-pages/Admin-home-pannel/Ad-home-pnnel.php';</script>";
+            window.location.href='./../employe/emp-home-pannel/EMP-home-pannel.php';</script>";
         } else{  
           echo "<script type='text/javascript'>alert('Invalid admin id and passwword');</script>";
         }    
@@ -136,30 +141,30 @@
                <div class="emp-form-container">
                <h1>welcome</h1>
                   <p style="right:36vh;  position: relative; font-family: Poppins;font-size: 30px;font-weight: bolder;color: #5F9FFF;background-color: #FCFCFC;padding: 10px;">EMPLOYEE LOGIN</p>
-                  <form action="#" method="post">
+                  <form action="" method="post">
                      <h6 for="employee-id">Employee Unique ID</h6>
                      <input type="text" id="employee-id" name="employee-id" placeholder="Enter your unique ID">
                      <h6 for="password">Password</h6>
                      <input type="password" id="password" name="epassword" placeholder="Enter your password">
-                     <button type="submit" class="log" name="submitemp" class="log"> LOGIN</button>
+                     <button type="submit" class="log" name="submitemp"> LOGIN</button>
                   </form>
-                  <button onclick="switchAdminLogin()" id="adminlogin-btn" class="log-2" type="submit">ADMIN LOGIN</button>
+                  <button onclick="switchAdminLogin()" id="adminlogin-btn" class="log" type="submit">ADMIN LOGIN</button>
                </div>
             </div>
             <!-- ADMIN FORM  -->
             <div id="admin-form" style="width:100%; height:100vh;overflow: hidden;">
             <div class="emp-form-container">
                   <p style="right:39vh;  position: relative; font-family: Poppins;font-size: 30px; font-weight: bolder; color: #5F9FFF;background-color: #FCFCFC;padding: 10px;">ADMIN LOGIN</p>
-                  <form actuion="" method="post">
+                  <form action="" method="post">
                   <span style="color:red"><?php echo $aerror ?></span>
                      <h6 for="employee-id">EMAIL ID</h6>
                      <input type="text" id="employee-id" name="adminid" placeholder="Enter your Email ID" >
                      <h6 for="password">Password</h6>
                      <input type="password" id="password" name="adminpassword" placeholder="Enter your password" >
                      <button type="submit" name="submitadmin" class="log"> LOGIN</button>
-                  </form>
+                  </form>        
                   <div class="btn">
-                    <button  onclick="switchEmpLogin()" id="emplogin-btn" class="log-2" type="submit">EMPLOY LOGIN</button>
+                    <button  onclick="switchEmpLogin()" id="emplogin-btn" class="log" type="submit">EMPLOY LOGIN</button>
                     <h4><a href="../Admin-pages/admin-regi/admin-regi.php">NEW REGISTRATION</a></h4>
                   </div>
                </div>

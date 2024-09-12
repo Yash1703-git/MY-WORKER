@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin-pannel</title>
     <link rel="stylesheet" href="Ad-home-pnnel.css">
-    <link rel="icon"  href="/assets/logo.jpg">
+    <link rel="icon"  href="../../assets/logo.jpg">
     <script>
         function openNav() {
           document.getElementById("mySidebar").style.width = "30%";
@@ -57,9 +57,7 @@
             <a href="#"><img src="../../assets/salaerie.png">Salaries</a> 
             <form method="post">  
              <button class="btn-logout" type="submit" name="logout">logout</button> 
-      </form>
-            
-      </form>
+     
           </div>
           </div>
           <div class="nav">
@@ -68,20 +66,51 @@
             </div>
             <div class="pro-icon"> </div>
             <div class="profile-img">
-              <a href="#"><img src="../../assets/profile.png">profile<?php echo $_SESSION['adminid']?></a>
+              <a href="#"><img src="../../assets/profile.png">profile</a>
+              <!-- <?php echo $_SESSION['adminid']?> -->
             </div>
           </div>
-         <?php
+        <div class="emp-total">
+             <!-- total qury -->
+          <?php
          $empquery="SELECT COUNT(ename) AS etotal FROM employees";
            $result = mysqli_query($conn, $empquery); 
            $row = mysqli_fetch_array($result, MYSQLI_ASSOC); 
            $etotal = $row ["etotal"]
          ?>
-         <h1>
+        <div class="emp-box">
           <?php
           echo $etotal;
           ?>
-         </h1>
+            <p>Total employee</p>
+         </div>
+          <!-- live qury -->
+         <?php
+         $liveempquery="SELECT COUNT(ename) AS livetotal FROM employees WHERE estatus='Live'";
+           $liveresult = mysqli_query($conn, $liveempquery); 
+           $liverow = mysqli_fetch_array($liveresult, MYSQLI_ASSOC); 
+           $livetotal = $liverow["livetotal"]
+         ?>
+        <div class="emp-box">
+          <?php
+          echo $livetotal;
+          ?>
+            <p>Employees on work</p>
+         </div>
+          <!-- gone qury-->
+         <?php
+         $Goneempquery="SELECT COUNT(ename) AS Gonetotal FROM employees WHERE estatus='Gone'";
+           $Goneresult = mysqli_query($conn, $Goneempquery); 
+           $Gonerow = mysqli_fetch_array($Goneresult, MYSQLI_ASSOC); 
+           $Gonetotal = $Gonerow["Gonetotal"]
+         ?>
+          <div class="emp-box">
+          <?php
+          echo $Gonetotal;
+          ?>
+          <p>Employees on leave</p>
+         </div>
+        </div>
     </div>
 </body>
 </html>

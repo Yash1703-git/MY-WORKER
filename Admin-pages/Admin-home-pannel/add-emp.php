@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="Ad-home-pnnel.css">
     <link rel="stylesheet" href="add-emp.css">
+    <link rel="icon"  href="../../assets/logo.jpg">
 </head>
 <body>
     <?php
@@ -65,15 +66,7 @@
         }
      }
     ?>
-<div class="nav">
-            <div id="main">
-              <button class="openbtn" onclick="openNav()">☰</button> 
-            </div>
-            <div class="pro-icon"> </div>
-            <div class="profile-img">
-             </div>
-          </div>
-          <div class="container">
+          <div class="container-2" style="background-color: #5F9FFF;">
             <form method="post">
                 <h1>New Employee</h1>
             <input type="text" name="ename" placeholder="Enter name">

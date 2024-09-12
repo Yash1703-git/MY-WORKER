@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin-pannel</title>
-    <link rel="stylesheet" href="Ad-home-pnnel.css">
+    <link rel="stylesheet" href="./Ad-home-pnnel.css">
     <link rel="stylesheet" href="all-emp.css">
-    <link rel="icon"  href="/assets/logo.jpg">
+    <link rel="icon"  href="../../assets/logo.jpg">
     <link rel="stylesheet" href="./../../assets/css/all.min.css">
     <script>
      
@@ -75,7 +75,7 @@
           $result = mysqli_query($conn, $empquery);  
           
           ?>
-          <div class="container-2" style="width:100%; height:100vh; display: flex; justify-content: center;">
+          <div class="container-2" style=" width:100%;height:100%; display: flex;justify-content: center;align-items: center;">
             <div>
             <table>
               <tr style="background-color: green;">
@@ -102,7 +102,7 @@
                                 echo $row["estatus"];
                                }
                                ?></td>  
-                               <td><a>Edit</a><a>Delete</a></td>  
+                               <td><i class="fa fa-pen"><i class="fa fa-trash"></td>  
                           </tr>  
                           <?php  
                           }  
