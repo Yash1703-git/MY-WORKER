@@ -140,7 +140,7 @@
             <div id="emp-form">
                <div class="emp-form-container">
                <h1>welcome</h1>
-                  <p style="right:36vh;  position: relative; font-family: Poppins;font-size: 30px;font-weight: bolder;color: #5F9FFF;background-color: #FCFCFC;padding: 10px;">EMPLOYEE LOGIN</p>
+                  <p style="right:36vh;  position: absoult; font-family: Poppins;font-size: 30px;font-weight: bolder;color: #5F9FFF;background-color: #FCFCFC;padding: 10px;">EMPLOYEE LOGIN</p>
                   <form action="" method="post">
                      <h6 for="employee-id">Employee Unique ID</h6>
                      <input type="text" id="employee-id" name="employee-id" placeholder="Enter your unique ID">
@@ -154,7 +154,7 @@
             <!-- ADMIN FORM  -->
             <div id="admin-form" style="width:100%; height:100vh;overflow: hidden;">
             <div class="emp-form-container">
-                  <p style="right:39vh;  position: relative; font-family: Poppins;font-size: 30px; font-weight: bolder; color: #5F9FFF;background-color: #FCFCFC;padding: 10px;">ADMIN LOGIN</p>
+                  <p style="right:39vh;  position:absoult; font-family: Poppins;font-size: 30px; font-weight: bolder; color: #5F9FFF;background-color: #FCFCFC;padding: 10px;">ADMIN LOGIN</p>
                   <form action="" method="post">
                   <span style="color:red"><?php echo $aerror ?></span>
                      <h6 for="employee-id">EMAIL ID</h6>
