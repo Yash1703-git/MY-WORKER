@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Add-Employee</title>
     <link rel="stylesheet" href="Ad-home-pnnel.css">
     <link rel="stylesheet" href="add-emp.css">
     <link rel="icon"  href="../../assets/logo.jpg">

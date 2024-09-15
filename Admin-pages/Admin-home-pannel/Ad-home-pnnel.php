@@ -52,10 +52,10 @@
             ?>
             <a href="./all-emp.php"><img src="../../assets/employe.png"> Employess </a>
             <a href="#"><img src="../../assets/live employe.png">Live Employess</a>
-            <a href="#"><img src="../../assets/attends.png">Attendance</a>
+            <a href="./attendance.php"><img src="../../assets/attends.png">Attendance</a>
             <a href="#"><img src="../../assets/notification.png">Notification</a>
             <a href="#"><img src="../../assets/salaerie.png">Salaries</a> 
-            <form method="post">  
+            
              <button class="btn-logout" type="submit" name="logout">logout</button> 
      
           </div>
