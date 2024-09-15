@@ -17,6 +17,7 @@
                 <div class="sidebar-nav">
                     <div>
                         <p><?php echo $_SESSION['company']; ?></p>
+                        <!-- jj -->
                     </div>
                     <a href="javascript:void(0)" class="closebtn" id="closebtn" onclick="closeNav()">×</a>
                 </div>

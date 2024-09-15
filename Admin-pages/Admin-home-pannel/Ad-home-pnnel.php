@@ -13,6 +13,7 @@
           document.getElementById("main").style.display="none"
         }
       //  hahah
+      // kk
         function closeNav() {
           document.getElementById("mySidebar").style.width = "0";
           document.getElementById("main").style.marginLeft= "0";

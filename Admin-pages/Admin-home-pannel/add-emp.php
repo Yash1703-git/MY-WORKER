@@ -51,6 +51,7 @@
             $euniqueid= $companyname.$randomString;
             $adminid=$_SESSION['adminid'];
         //   insert query
+        // jj
 
         $sql="  INSERT INTO `employees`( `ename`, `emobile`, `eemail`, `ejoiningdate`, `esalary`, `estatus`, `euniqueid`, `epassword`, `adminid`)
              VALUES ('$ename','$emobile','$eemail','$ejoiningdate',$esalary,'$estatus','$euniqueid','$hashed_password',$adminid)";
