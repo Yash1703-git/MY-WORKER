@@ -65,7 +65,7 @@
             </div>
             <div class="pro-icon"> </div>
             <div class="profile-img">
-           <a href="./add-emp.php"><i class="fa fa-plus"></i>Add Employee</a>  
+          <a href="./add-emp.php"><i class="fa fa-plus"></i>Add Employee</a>  
             </div>
           </div>
           <?php
@@ -75,7 +75,7 @@
           $result = mysqli_query($conn, $empquery);  
           
           ?>
-          <div class="container-2" style=" width:100%;height:100%; display: flex;justify-content: center;align-items: center;">
+          <div class="container-2">
             <div>
             <table>
               <tr style="background-color: green;">
@@ -111,5 +111,6 @@
             </div>
           </div>
     </div>    
+    
 </body>
 </html>
