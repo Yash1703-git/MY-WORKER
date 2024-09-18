@@ -3,106 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin-pannel</title>
+    <title>Admin Panel</title>
     <link rel="stylesheet" href="Ad-home-pnnel.css">
-    <link rel="icon"  href="../../assets/logo.jpg">
+    <link rel="icon" href="../../assets/logo.jpg">
     <script>
+        // Function to open the sidebar
         function openNav() {
-          document.getElementById("mySidebar").style.width = "30%";
-          document.getElementById("main").style.marginLeft = "0px";
-          document.getElementById("main").style.display="none"
+            document.getElementById("mySidebar").style.width = "30%";
+            document.getElementById("main").style.marginLeft = "0px";
+            document.getElementById("main").style.display = "none";
         }
-     
+        
+        // Function to close the sidebar
         function closeNav() {
-          document.getElementById("mySidebar").style.width = "0";
-          document.getElementById("main").style.marginLeft= "0";
-          document.getElementById("main").style.display="block"
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.getElementById("main").style.display = "block";
         }
-        </script>
+    </script>
 </head>
 <body>
-  <?php 
-  include_once("../../db/conection.php");
-  session_start();
-   ?>
-    <div class="container">
-        <div id="mySidebar" class="sidebar">
-          <div class="sidebar-nav">
-          <div style="width: 100%; height:100%; text-align:center; position:relative;top:30%;">
-                <p><?php  echo $_SESSION['company'] ?></p>
-            
-              </div>
-      
+<?php 
+include_once("../../db/conection.php"); // Include database connection
+session_start(); // Start the session
+?>
+<div class="container">
+    <div id="mySidebar" class="sidebar">
+        <div class="sidebar-nav">
+            <div style="width: 100%; height: 100%; text-align: center; position: relative; top: 30%;">
+                <p><?php echo htmlspecialchars($_SESSION['company'] ?? 'Company'); ?></p>
+            </div>
             <a href="javascript:void(0)" class="closebtn" id="closebtn" onclick="closeNav()">×</a>
-          </div>
-          <div class="side-container">
-          <?php
-                    if (isset($_POST["logout"])) {
-                        unset($_SESSION['adminid']);
-                        header("Location: ../../Login/login.php");
-                    }
-                    ?>
-            <a href="./all-emp.php"><img src="../../assets/employe.png"> Employess </a>
-            <a href="#"><img src="../../assets/live employe.png">Live Employess</a>
-            <a href="./../Admin-home-pannel/attendance.php"><img src="../../assets/attends.png">Attendance</a>
-            <a href="#"><img src="../../assets/notification.png">Notification</a>
-            <a href="./salary.php/salary.php"><img src="../../assets/salaerie.png">Salaries</a> 
+        </div>
+        <div class="side-container">
+            <?php
+            // Logout functionality
+            if (isset($_POST["logout"])) {
+                unset($_SESSION['adminid']); // Unset admin session
+                header("Location: ../../Login/login.php"); // Redirect to login page
+                exit(); // Stop execution after redirect
+            }
+            ?>
+            <a href="./all-emp.php"><img src="../../assets/employe.png"> Employees</a>
+            <a href="#"><img src="../../assets/live employe.png"> Live Employees</a>
+            <a href="./../Admin-home-pannel/attendance.php"><img src="../../assets/attends.png"> Attendance</a>
+            <a href="#"><img src="../../assets/notification.png"> Notification</a>
+            <a href="../Admin-home-pannel/salary/salary.php"><img src="../../assets/salaerie.png"> Salaries</a> 
             <form method="post">
-                        <button class="btn-logout" type="submit" name="logout">Logout</button>
-                    </form>
-          </div>
-          </div>
-          <div class="nav">
-            <div id="main">
-              <button class="openbtn" onclick="openNav()">☰</button> 
-            </div>
-            <div class="pro-icon"> </div>
-            <div class="profile-img">
-              <a href="#"><img src="../../assets/profile.png">profile</a>
-              <?php echo $_SESSION['adminid']?>
-            </div>
-          </div>
-        <div class="emp-total">
-             <!-- total qury -->
-          <?php
-         $empquery="SELECT COUNT(ename) AS etotal FROM employees";
-           $result = mysqli_query($conn, $empquery); 
-           $row = mysqli_fetch_array($result, MYSQLI_ASSOC); 
-           $etotal = $row ["etotal"]
-         ?>
-        <div class="emp-box">
-          <?php
-          echo $etotal;
-          ?>
-            <p>Total employee</p>
-         </div>
-          <!-- live qury -->
-         <?php
-         $liveempquery="SELECT COUNT(ename) AS livetotal FROM employees WHERE estatus='Live'";
-           $liveresult = mysqli_query($conn, $liveempquery); 
-           $liverow = mysqli_fetch_array($liveresult, MYSQLI_ASSOC); 
-           $livetotal = $liverow["livetotal"]
-         ?>
-        <div class="emp-box">
-          <?php
-          echo $livetotal;
-          ?>
-            <p>Employees on work</p>
-         </div>
-          <!-- leave qury-->
-         <?php
-         $leaveempquery="SELECT COUNT(ename) AS leavetotal FROM employees WHERE estatus='leave'";
-           $leaveresult = mysqli_query($conn, $leaveempquery); 
-           $leaverow = mysqli_fetch_array($leaveresult, MYSQLI_ASSOC); 
-           $leavetotal = $leaverow["leavetotal"]
-         ?>
-          <div class="emp-box">
-          <?php
-          echo $leavetotal;
-          ?>
-          <p>Employees on leave</p>
-         </div>
+                <button class="btn-logout" type="submit" name="logout">Logout</button>
+            </form>
         </div>
     </div>
+
+    <div class="nav">
+        <div id="main">
+            <button class="openbtn" onclick="openNav()">☰</button> 
+        </div>
+        <div class="pro-icon"></div>
+        <div class="profile-img">
+            <a href="#"><img src="../../assets/profile.png"> Profile</a>
+            <?php echo htmlspecialchars($_SESSION['adminid'] ?? 'Admin'); ?>
+        </div>
+    </div>
+
+    <div class="emp-total">
+        <!-- Total Employees Query -->
+        <?php
+        $empquery = "SELECT COUNT(ename) AS etotal FROM employees";
+        $result = mysqli_query($conn, $empquery); 
+        $etotal = $result ? mysqli_fetch_assoc($result)['etotal'] : 0; // Check query success
+        ?>
+        <div class="emp-box">
+            <?php echo $etotal; ?>
+            <p>Total Employees</p>
+        </div>
+
+        <!-- Live Employees Query -->
+        <?php
+        $liveempquery = "SELECT COUNT(ename) AS livetotal FROM employees WHERE estatus='Live'";
+        $liveresult = mysqli_query($conn, $liveempquery); 
+        $livetotal = $liveresult ? mysqli_fetch_assoc($liveresult)['livetotal'] : 0; // Check query success
+        ?>
+        <div class="emp-box">
+            <?php echo $livetotal; ?>
+            <p>Employees on Work</p>
+        </div>
+
+        <!-- Employees on Leave Query -->
+        <?php
+        $leaveempquery = "SELECT COUNT(ename) AS leavetotal FROM employees WHERE estatus='leave'";
+        $leaveresult = mysqli_query($conn, $leaveempquery); 
+        $leavetotal = $leaveresult ? mysqli_fetch_assoc($leaveresult)['leavetotal'] : 0; // Check query success
+        ?>
+        <div class="emp-box">
+            <?php echo $leavetotal; ?>
+            <p>Employees on Leave</p>
+        </div>
+    </div>
+</div>
 </body>
 </html>

@@ -1,0 +1,64 @@
+/* Container for the section, centers its content */
+.container-2 {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    margin: 5% auto; /* Margin for top/bottom and auto for left/right */
+}
+
+/* Styles for the current date display */
+.current-date {
+    font-size: 30px; /* Font size */
+    font-weight: 600; /* Semi-bold weight */
+}
+
+/* Container for section buttons */
+.section-button {
+    height: 100%; /* Full height */
+    width: 100%; /* Full width */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons horizontally */
+    margin-top: 8px; /* Space above the button container */
+}
+
+/* Styles for individual buttons */
+.section-button button {
+    width: 500px; /* Fixed width for buttons */
+    height: 40px; /* Fixed height for buttons */
+    font-size: 25px; /* Font size */
+    font-weight: bold; /* Bold text */
+    border: none; /* No border */
+    border-radius: 10px; /* Rounded corners */
+    margin-top: 20px; /* Space above each button */
+    cursor: pointer; /* Pointer cursor on hover for better UX */
+}
+
+/* Specific style for Paid Salary button */
+.section-button #Paid-salary {
+    background: #2870B9; /* Blue background */
+}
+
+/* Specific style for Unpaid Salary button */
+.section-button #Unpaid-salary {
+    background: #F07969; /* Red background */
+    margin-bottom: 50px; /* Optional space below the button */
+}
+
+/* Specific style for All Salary button */
+.section-button #All-salary {
+    background: #80B17B; /* Green background */
+}
+
+/* Ensure links within buttons are styled correctly */
+.section-button button a {
+    text-decoration: none; /* Remove underline from links */
+    color: snow; /* Text color for the links */
+    display: block; /* Makes the entire button clickable */
+    height: 100%; /* Ensure link fills the button height */
+    width: 100%; /* Ensure link fills the button width */
+    text-align: center; /* Center the text horizontally */
+    line-height: 40px; /* Vertically centers the text within the button */
+}

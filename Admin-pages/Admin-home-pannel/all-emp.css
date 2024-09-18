@@ -1,109 +1,126 @@
+/* General table styles */
 table {
-   font-size: 20px;
-    width: 70%;
-    border: 2px solid #151414; 
-    margin: 10px;
-    
+    font-size: 20px; /* Font size for table text */
+    width: 70%; /* Table width */
+    border: 2px solid #151414; /* Table border */
+    margin: 10px; /* Margin around the table */
 }
-  
+
+/* Header and cell styles */
 th, td {
-    border: 2px solid #151414; 
-    text-align: center;
-    padding: 8px;
-}
- 
-tr{
-    height: 90px;
-    width: 100%;
-    
-}
-tr:nth-child(even){
-    background-color: #bbb9b9
-} 
-td i{
-    padding: 10px;
-    gap: 10px;
-    font-size:20px ;
+    border: 2px solid #151414; /* Cell border */
+    text-align: center; /* Center text in cells */
+    padding: 8px; /* Padding inside cells */
 }
 
-.container-2{
-    width: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-}
-.add-button{
-    background-color: #0D73D2;
-    border: none;
-    font-size:20px;
+/* Row height */
+tr {
+    height: 90px; /* Fixed height for rows */
+    width: 100%; /* Full width for rows */
 }
 
-#openModalBtn{
-    font-size: 30px;
-    background: none;
-    border: none;
+/* Alternate row coloring for better readability */
+tr:nth-child(even) {
+    background-color: #bbb9b9; /* Light gray background for even rows */
 }
-/* Modal Background */
+
+/* Icon styles within table cells */
+td i {
+    padding: 10px; /* Padding around icons */
+    gap: 10px; /* Space between icons */
+    font-size: 20px; /* Font size for icons */
+}
+
+/* Container for aligning elements */
+.container-2 {
+    width: 100%; /* Full width for the container */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+}
+
+/* Add button styles */
+.add-button {
+    background-color: #0D73D2; /* Background color for the add button */
+    border: none; /* No border */
+    font-size: 20px; /* Font size for button text */
+}
+
+/* Button to open the modal */
+#openModalBtn {
+    font-size: 30px; /* Font size for button */
+    background: none; /* No background */
+    border: none; /* No border */
+}
+
+/* Modal background styles */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
+    z-index: 1; /* Sit on top of other elements */
+    left: 0; /* Align to left */
+    top: 0; /* Align to top */
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
 }
 
-/* Modal Content */
+/* Modal content styles */
 .modal-content {
-   display: flex;
-   flex-direction: column;
-    background-color: rgba(255, 255, 255, .15);
-    backdrop-filter: blur(5px);
-    margin: 5% auto; /* 5% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 45%; /* Could be more or less, depending on screen size */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Column layout */
+    background-color: rgba(255, 255, 255, 0.15); /* Light background with transparency */
+    backdrop-filter: blur(5px); /* Blur the background */
+    margin: 5% auto; /* Center the modal vertically and horizontally */
+    padding: 20px; /* Padding inside the modal */
+    border: 1px solid #888; /* Border around the modal */
+    width: 45%; /* Width of the modal */
 }
 
-/* Close Button */
+/* Close button styles */
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    color: #aaa; /* Default close button color */
+    float: right; /* Align to the right */
+    font-size: 28px; /* Font size for close button */
+    font-weight: bold; /* Bold font */
 }
 
+/* Hover and focus styles for close button */
 .close:hover,
 .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+    color: black; /* Change color on hover/focus */
+    text-decoration: none; /* No underline */
+    cursor: pointer; /* Pointer cursor */
 }
 
-.modal-content h2, form{
-    text-align: center;
-}
-.modal-content label{
-    font-size: 30px;
+/* Centering header and form elements in modal content */
+.modal-content h2, form {
+    text-align: center; /* Center text */
 }
 
-.modal-content input{
-    width: 40%;
-    margin-bottom: 16px;
+/* Label styles in modal */
+.modal-content label {
+    font-size: 30px; /* Font size for labels */
 }
 
-.modal-content button{
-    width: 30%;
-    background: #2870B9;
+/* Input field styles in modal */
+.modal-content input {
+    width: 40%; /* Width of input fields */
+    margin-bottom: 16px; /* Margin below inputs */
 }
-.modal-content button,input{
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    font-size: 25px;
-  
+
+/* Button styles in modal */
+.modal-content button {
+    width: 30%; /* Width of buttons */
+    background: #2870B9; /* Background color for buttons */
+}
+
+/* Padding and border radius for buttons and inputs */
+.modal-content button, input {
+    padding: 10px; /* Padding inside buttons and inputs */
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 25px; /* Font size for buttons and inputs */
 }

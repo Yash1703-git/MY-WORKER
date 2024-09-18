@@ -1,191 +1,214 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;  
+/* Resetting default padding and margin for all elements */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;  
 }
 
-body{
-    font-family: "../fonts/poppins.ttf";
-} 
-.container{
+/* Body styles */
+body {
+  font-family: "../fonts/poppins.ttf"; /* Ensure font path is correct */
+}
+
+/* Main container for the layout */
+.container {
   height: 100%;
   width: 100%;
 }
 
+/* Sidebar styles */
 .sidebar {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
-  width:30%;
+  width: 30%; /* Fixed width for the sidebar */
   position: fixed;
-  z-index: 1;
+  z-index: 1; /* Ensure sidebar is on top */
   left: 0;
   background-color: #fff;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
- border-right: 1px solid rgba(0, 0, 0, 0.246);
- top: 0;
- right: 25px;
- font-size: 36px;
-}  
-.sidebar a {
-  padding-left: 20px;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  transition: 0.5s; /* Smooth transition */
+  padding-top: 60px; /* Space from top */
+  border-right: 1px solid rgba(0, 0, 0, 0.246); /* Border for separation */
+  top: 0;
+}
+.sidebar-nav .closebtn a{
   text-decoration: none;
-  font-size: 20px;
-  color: #353333;
-  display: block;
-  transition: 0.3s;
-  border-bottom: 1px solid #fff;
 }
+
+/* Sidebar link styles */
+.sidebar a {
+  padding-left: 20px; /* Space on left */
+  text-decoration: none; /* Remove underline */
+  font-size: 20px; /* Font size */
+  color: #353333; /* Text color */
+  display: block; /* Block display */
+  transition: 0.3s; /* Transition effect */
+}
+
+/* Sidebar link hover effect */
 .sidebar a:hover {
-  font-weight: bolder;
+  font-weight: bolder; /* Make text bold on hover */
 }
 
-.sidebar a:active{
-  color: plum;
-  font-size: 2px;
-  font-weight: bolder;
-}
-.sidebar a img{
-width: 21.88px;
-height: 25px;
-top: 344px;
-left: 42px;
-gap: 0px;
-opacity: 0px;
-margin-right: 15px;
+/* Active link styles */
+.sidebar a:active {
+  color: plum; /* Active link color */
+  font-weight: bolder; /* Bold font */
 }
 
-.sidebar-nav{
+/* Sidebar icon styles */
+.sidebar a img {
+  width: 21.88px;
+  height: 25px;
+  margin-right: 15px; /* Space between icon and text */
+}
+
+/* Sidebar navigation header styles */
+.sidebar-nav {
   position: absolute;
-  top:0;
+  top: 0;
   width: 100%;
   height: 100px;
-  background-color: rgb(13, 115, 210); 
-}
-.sidebar-nav a{
-  margin-top: 10px;
-}
-.sidebar-nav .sidebar-nav-img{
-  margin-left: 20px;
-}
-.sidebar-nav-img{
-  width: 100px;
-  height: 100px;
-  background-image: url("../../assets/image.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.side-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 100vh;
-  padding-left: 20px;
+  background-color: rgb(13, 115, 210); /* Header background color */
 }
 
+/* Styles for links in the sidebar navigation */
+.sidebar-nav a {
+  margin-top: 10px; /* Space between links */
+}
+
+/* Sidebar navigation image styles */
+.sidebar-nav .sidebar-nav-img {
+  margin-left: 20px; /* Space on left */
+}
+
+/* Sidebar image container */
+.sidebar-nav-img {
+  width: 100px;
+  height: 100px;
+  background-image: url("../../assets/image.png"); /* Replace with correct image */
+  background-position: center;
+  background-size: contain; /* Scale image */
+  background-repeat: no-repeat; /* No repeat */
+}
+
+/* Container for sidebar links */
+.side-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; /* Evenly space items */
+  height: 100vh; /* Full height of viewport */
+  padding-left: 20px; /* Left padding */
+}
+
+/* Open button styles */
 .openbtn {
   position: absolute;
   top: 15px;
-  font-size: 30px;
-  cursor: pointer;
-  background-color: transparent;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-}
-.openbtn:hover{
-  background-color:rgb(0, 126, 253); ;
+  font-size: 30px; /* Size of open button */
+  cursor: pointer; /* Pointer on hover */
+  background-color: transparent; /* Transparent background */
+  color: white; /* White text */
+  padding: 10px 15px; /* Padding around text */
+  border: none; /* No border */
 }
 
-#closebtn{
-  font-size: 60px;
-   border-bottom: none;
-   color: rgb(242, 243, 244);
-  } 
-.closebtn{
-   position: absolute;
-   top: 10px;
-   right: 10px;
-   font-size: 36px;
-   margin-left: 50px;
+/* Hover effect for the open button */
+.openbtn:hover {
+  background-color: rgb(0, 126, 253); /* Background color on hover */
 }
 
-.nav{
-  position: sticky;
+/* Close button styles */
+#closebtn {
+  font-size: 60px; /* Size of close button */
+  color: rgb(242, 243, 244); /* Close button color */
+}
+
+.closebtn {
+  position: absolute;
+  top: 10px; /* Positioning */
+  right: 10px; /* Positioning */
+  font-size: 36px; /* Font size */
+}
+
+/* Navigation bar styles */
+.nav {
+  position: sticky; /* Sticky positioning */
   top: 0;
   left: 0;
-  padding: 0px 20px 0px 20px;
-  display: flex;
-  justify-content:space-between;
-  padding-bottom: 20px;
-  background-color: rgb(13, 115, 210);
-  height: 100px;
-  width: 100%;
-  
+  padding: 0 20px; /* Padding */
+  display: flex; /* Flexbox layout */
+  justify-content: space-between; /* Space between elements */
+  background-color: rgb(13, 115, 210); /* Background color */
+  height: 100px; /* Height of navigation */
+  width: 100%; /* Full width */
 }
 
-.profile-img a{
+/* Profile image link styles */
+.profile-img a {
   position: relative;
-  top:20px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #fff;
-  font-weight: bolder;
+  top: 20px; /* Positioning */
+  text-decoration: none; /* Remove underline */
+  font-size: 20px; /* Font size */
+  color: #fff; /* Text color */
+  font-weight: bolder; /* Bold text */
+}
 
-} 
-.profile-img a img{
+/* Profile image styles */
+.profile-img a img {
   position: relative;
- top: 10px;
- background-color: #fff;
- height: 40px;
- margin-right: 10px;
+  top: 10px; /* Positioning */
+  background-color: #fff; /* Background color */
+  height: 40px; /* Height */
+  margin-right: 10px; /* Space to the right */
 }
-.pro-icon{
+
+/* Profile icon styles */
+.pro-icon {
   position: relative;
-  top:-20px;
-  width:150px;
-  height:150px;
-  background-image: url("../../assets/image.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  top: -20px; /* Positioning */
+  width: 150px; /* Width of the icon */
+  height: 150px; /* Height of the icon */
+  background-image: url("../../assets/image.png"); /* Replace with correct image */
+  background-size: contain; /* Scale image */
+  background-repeat: no-repeat; /* No repeat */
+  background-position: center; /* Center the image */
 }
 
-.btn-logout{
- background-color: orange;
- width: 70%;
- height: 40px;
- font-size: 20px;
- border-radius: 20px;
- border: none;
-}   
-
-.emp-total{
-  /* margin: 30px; */
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+/* Logout button styles */
+.btn-logout {
+  background-color: orange; /* Background color */
+  width: 70%; /* Width */
+  height: 40px; /* Height */
+  font-size: 20px; /* Font size */
+  border-radius: 20px; /* Rounded corners */
+  border: none; /* No border */
 }
- 
-.emp-box{
-  color: snow;
-  font-size: 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 150px;
- margin: 20px;
- background-image: url("../../assets/box-bg.jpg");
- background-position: center;
- background-size: cover;
- 
+
+/* Employee totals display styles */
+.emp-total {
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  display: flex; /* Flexbox layout */
+  flex-direction: row; /* Horizontal layout */
+  justify-content: space-around; /* Space between elements */
+  align-items: center; /* Center items vertically */
+}
+
+/* Employee box styles */
+.emp-box {
+  color: snow; /* Text color */
+  font-size: 25px; /* Font size */
+  display: flex; /* Flexbox layout */
+  flex-direction: column; /* Vertical layout */
+  align-items: center; /* Center items */
+  justify-content: center; /* Center items */
+  width: 100%; /* Full width */
+  height: 150px; /* Fixed height */
+  margin: 20px; /* Margin */
+  background-image: url("../../assets/box-bg.jpg"); /* Background image */
+  background-position: center; /* Center the image */
+  background-size: cover; /* Cover the entire box */
 }
