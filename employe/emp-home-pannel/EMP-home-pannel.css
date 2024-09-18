@@ -11,7 +11,7 @@ body{
   height: 100vh;
   width: 100vw;
 }
-/* kkk */
+
 .sidebar {
     display: flex;
     flex-direction: column;

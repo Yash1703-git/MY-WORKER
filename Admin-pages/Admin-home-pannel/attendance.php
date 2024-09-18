@@ -15,9 +15,9 @@
         <div class="container">
             <div id="mySidebar" class="sidebar">
                 <div class="sidebar-nav">
-                    <div>
+                <div style="width: 100%; height:100%; text-align:center; position:relative;top:30%;">
                         <p><?php echo $_SESSION['company']; ?></p>
-                        <!-- jj -->
+                    
                     </div>
                     <a href="javascript:void(0)" class="closebtn" id="closebtn" onclick="closeNav()">×</a>
                 </div>
@@ -29,10 +29,10 @@
                     }
                     ?>
                     <a href="./all-emp.php"><img src="../../assets/employe.png"> Employees </a>
-                    <a href="#"><img src="../../assets/live employe.png"> Live Employees</a>
-                    <a href="#"><img src="../../assets/attends.png"> Attendance</a>
-                    <a href="#"><img src="../../assets/notification.png"> Notification</a>
-                    <a href="#"><img src="../../assets/salaerie.png"> Salaries</a> 
+                    <a href=""><img src="../../assets/live employe.png"> Live Employees</a>
+                    <a href="./attendance.php"><img src="../../assets/attends.png"> Attendance</a>
+                    <a href=""><img src="../../assets/notification.png"> Notification</a>
+                    <a href="./salary.php/salary.php"><img src="../../assets/salaerie.png"> Salaries</a> 
                     <form method="post">
                         <button class="btn-logout" type="submit" name="logout">Logout</button>
                     </form>

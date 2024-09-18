@@ -12,8 +12,7 @@
           document.getElementById("main").style.marginLeft = "0px";
           document.getElementById("main").style.display="none"
         }
-      //  hahah
-      // kk
+     
         function closeNav() {
           document.getElementById("mySidebar").style.width = "0";
           document.getElementById("main").style.marginLeft= "0";
@@ -29,36 +28,28 @@
     <div class="container">
         <div id="mySidebar" class="sidebar">
           <div class="sidebar-nav">
-            <div class="">
-              
-            
-                <p ><?php  echo $_SESSION['company'] ?></p>
+          <div style="width: 100%; height:100%; text-align:center; position:relative;top:30%;">
+                <p><?php  echo $_SESSION['company'] ?></p>
             
               </div>
       
             <a href="javascript:void(0)" class="closebtn" id="closebtn" onclick="closeNav()">×</a>
           </div>
           <div class="side-container">
-            <?php
-            
-            
-
-           
-            if (isset($_POST["logout"])) {
-              unset($_SESSION['adminid']);
-             
-               header("Location: ../../Login/login.php");
-            //session_destroy();
-            }
-            ?>
+          <?php
+                    if (isset($_POST["logout"])) {
+                        unset($_SESSION['adminid']);
+                        header("Location: ../../Login/login.php");
+                    }
+                    ?>
             <a href="./all-emp.php"><img src="../../assets/employe.png"> Employess </a>
             <a href="#"><img src="../../assets/live employe.png">Live Employess</a>
-            <a href="./attendance.php"><img src="../../assets/attends.png">Attendance</a>
+            <a href="./../Admin-home-pannel/attendance.php"><img src="../../assets/attends.png">Attendance</a>
             <a href="#"><img src="../../assets/notification.png">Notification</a>
-            <a href="#"><img src="../../assets/salaerie.png">Salaries</a> 
-            
-             <button class="btn-logout" type="submit" name="logout">logout</button> 
-     
+            <a href="./salary.php/salary.php"><img src="../../assets/salaerie.png">Salaries</a> 
+            <form method="post">
+                        <button class="btn-logout" type="submit" name="logout">Logout</button>
+                    </form>
           </div>
           </div>
           <div class="nav">
@@ -68,7 +59,7 @@
             <div class="pro-icon"> </div>
             <div class="profile-img">
               <a href="#"><img src="../../assets/profile.png">profile</a>
-              <!-- <?php echo $_SESSION['adminid']?> -->
+              <?php echo $_SESSION['adminid']?>
             </div>
           </div>
         <div class="emp-total">
