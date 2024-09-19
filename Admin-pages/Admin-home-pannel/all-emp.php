@@ -129,7 +129,11 @@
                         <input type="tel" name="emobile" placeholder="Enter Mobile No" required>
                         <input type="date" name="ejoiningdate" required>
                         <input type="number" name="esalary" placeholder="Salary" required>
-                        <input type="text" name="estatus" placeholder="Live/Leave" required>
+                        <!-- <input type="text" name="estatus" placeholder="Live/Gone" required> -->
+                         <select name="estatus">
+                            <option>Live</option>
+                            <option>Gone</option>
+                         </select>
                         <button type="submit" name="submit">Save Me</button>
                     </form>
                 </div>
@@ -142,6 +146,26 @@
         $adminid = $_SESSION['adminid'];
         $empquery = "SELECT * FROM employees WHERE adminid = $adminid";
         $result = mysqli_query($conn, $empquery);  
+
+
+        //delte employee
+
+        if(isset($_POST['deletesubmit'])){
+
+            $eid = $_POST["eid"];
+            $sql = "DELETE FROM `employees` WHERE eid=$eid";
+            echo "<script type='text/javascript'>if(Confirm('Are you sure you want to delete this employee?')==true){</script>";
+            if ($conn->query($sql) === TRUE) {
+                echo "<script type='text/javascript'>alert('Employee deleted successfully');
+                window.location.href='../Admin-home-pannel/all-emp.php';</script>";
+            } else {
+                echo "<script type='text/javascript'>alert('Error: " . $sql . "<br>" . $conn->error . "');</script>";
+            }
+    
+            echo "<script type='text/javascript'>}else{}</script>";
+
+           
+        }
         ?>
         <!-- All Employees Table -->
         <div class="container-2">
@@ -156,16 +180,22 @@
                 </tr>
                 <?php  
                 while ($row = mysqli_fetch_array($result)) {  
+                    $editurl="edit-emp.php?ename=".htmlspecialchars($row["ename"])."&emobile=".htmlspecialchars($row["emobile"])."&eemail=".htmlspecialchars($row["eemail"])."&ejoiningdate=".htmlspecialchars($row["ejoiningdate"])."&esalary=".htmlspecialchars($row["esalary"])."&estatus=".htmlspecialchars($row["estatus"])."&eid=".$row["eid"];
                 ?>  
                 <tr>  
                     <td><?php echo htmlspecialchars($row["ename"]); ?></td>  
                     <td><?php echo htmlspecialchars($row["emobile"]); ?></td>  
                     <td><?php echo htmlspecialchars($row["eemail"]); ?></td>  
                     <td><?php echo htmlspecialchars($row["ejoiningdate"]); ?></td>  
-                    <td><?php echo ($row["estatus"] === "Gone") ? "Inactive" : htmlspecialchars($row["estatus"]); ?></td>  
+                    <td><?php echo $row["estatus"]; ?></td>  
                     <td>
-                        <i class="fa fa-pen"></i>
-                        <i class="fa fa-trash"></i>
+                       <a href=<?php echo $editurl ?>> <i class="fa fa-pen"></i></a>
+                       <form action="" method="post">
+                        <input type="hidden" name="eid" value=<?php echo htmlspecialchars($row["eid"]); ?> />
+                       <button type="submit" name="deletesubmit" style="border:none; background:none; cursor:pointer;">
+                       <i  class="fa fa-trash"></i>
+                       </button>
+                </form>
                     </td>  
                 </tr>  
                 <?php  

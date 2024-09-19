@@ -111,6 +111,11 @@ td i {
     margin-bottom: 16px; /* Margin below inputs */
 }
 
+.modal-content select{
+    width: 40%; /* Width of input fields */
+    margin-bottom: 16px; /* Margin below inputs */
+}
+
 /* Button styles in modal */
 .modal-content button {
     width: 30%; /* Width of buttons */

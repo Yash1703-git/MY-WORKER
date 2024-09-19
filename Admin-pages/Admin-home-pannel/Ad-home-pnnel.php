@@ -89,15 +89,15 @@ session_start(); // Start the session
             <p>Employees on Work</p>
         </div>
 
-        <!-- Employees on Leave Query -->
+        <!-- Employees on Gone Query -->
         <?php
-        $leaveempquery = "SELECT COUNT(ename) AS leavetotal FROM employees WHERE estatus='leave'";
-        $leaveresult = mysqli_query($conn, $leaveempquery); 
-        $leavetotal = $leaveresult ? mysqli_fetch_assoc($leaveresult)['leavetotal'] : 0; // Check query success
+        $Goneempquery = "SELECT COUNT(ename) AS Gonetotal FROM employees WHERE estatus='Gone'";
+        $Goneresult = mysqli_query($conn, $Goneempquery); 
+        $Gonetotal = $Goneresult ? mysqli_fetch_assoc($Goneresult)['Gonetotal'] : 0; // Check query success
         ?>
         <div class="emp-box">
-            <?php echo $leavetotal; ?>
-            <p>Employees on Leave</p>
+            <?php echo $Gonetotal; ?>
+            <p>Employees on Gone</p>
         </div>
     </div>
 </div>

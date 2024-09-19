@@ -104,7 +104,7 @@
          $result = mysqli_query($conn, $loginquery);  
          $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
          $count = mysqli_num_rows($result);  
-         print_r($row);
+         // print_r($row);
          if($count == 1){  
            $_SESSION['myadminid']=$row['adminid'];  
           $_SESSION['eid']=$row['eid'];
