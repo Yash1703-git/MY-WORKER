@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>edit-employee</title>
+    <link rel="stylesheet" href="edit-emp.css">
 </head>
 <body>
    
@@ -51,7 +52,7 @@
                     }
                 }
                 ?>
-
+<div class="container-2">
     <form method="post">
                         <h1>Update Employee</h1>
                         <input type="text" name="ename" value=<?php echo $_GET['ename']?> placeholder="Enter name" required>
@@ -74,5 +75,6 @@
                         </select>
                         <button type="submit" name="editsubmit">Save Me</button>
                     </form>
+                    </div>
 </body>
 </html>

@@ -27,35 +27,34 @@ body{
     padding-top: 60px;
    border-right: 1px solid rgba(0, 0, 0, 0.246);
 }  
-.sidebar a {
-    padding-left: 20px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #353333;
-    display: block;
-    transition: 0.3s;
-    border-bottom: 1px solid #fff;
-}
-
-.sidebar a:hover {
-    color: #f1f1f1;
-}
-.sidebar {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-}
+/* Sidebar link styles */
+.sidebar-container a {
+    padding-left: 20px; /* Space on left */
+    text-decoration: none; /* Remove underline */
+    font-size: 20px; /* Font size */
+    color: #353333; /* Text color */
+    display: block; /* Block display */
+    transition: 0.3s; /* Transition effect */
+    border: none;
+  }
   
-.sidebar a img{
-  width: 21.88px;
-height: 25px;
-top: 344px;
-left: 42px;
-gap: 0px;
-opacity: 0px;
-margin-right: 15px;
-}
+  /* sidebar-container link hover effect */
+  .sidebar-container a:hover {
+    font-weight: bolder; /* Make text bold on hover */
+  }
+  
+  /* Active link styles */
+  .sidebar-container a:active {
+    color: plum; /* Active link color */
+    font-weight: bolder; /* Bold font */
+  }
+  
+  /* sidebar-container icon styles */
+  .sidebar-container a img {
+    width: 21.88px;
+    height: 25px;
+    margin-right: 15px; /* Space between icon and text */
+  }
 
 .sidebar-nav{
     position: absolute;
@@ -79,6 +78,9 @@ margin-right: 15px;
     height: 100vh;
     padding-left: 20px;
 }
+
+
+
 .sidebar-nav-img{
     width: 100px;
     height: 100px; 
@@ -116,6 +118,7 @@ margin-right: 15px;
     right: 10px;
     font-size: 36px;
     margin-left: 50px;
+
 }
 /* nav-bar */
 .Nav-bar{

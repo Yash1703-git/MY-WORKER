@@ -22,6 +22,11 @@
             document.getElementById("main").style.marginLeft = "0";
             document.getElementById("main").style.display = "block";
         }
+
+        function confirmDelete() {
+            return confirm("Are you sure you want to delete this item?");
+        }
+
     </script>
 </head>
 <body>
@@ -148,7 +153,7 @@
         $result = mysqli_query($conn, $empquery);  
 
 
-        //delte employee
+        // delte employee
 
         if(isset($_POST['deletesubmit'])){
 
@@ -190,12 +195,17 @@
                     <td><?php echo $row["estatus"]; ?></td>  
                     <td>
                        <a href=<?php echo $editurl ?>> <i class="fa fa-pen"></i></a>
-                       <form action="" method="post">
-                        <input type="hidden" name="eid" value=<?php echo htmlspecialchars($row["eid"]); ?> />
-                       <button type="submit" name="deletesubmit" style="border:none; background:none; cursor:pointer;">
-                       <i  class="fa fa-trash"></i>
-                       </button>
-                </form>
+
+                       <!-- delete button -->
+                       <!-- <h1>Item Details</h1>
+                       <p>Item ID: <?php echo htmlspecialchars($row['eid']); ?></p> -->
+
+                       <form action="" method="post" onsubmit="return confirmDelete();">
+                         <input type="hidden" name="eid" value="<?php echo htmlspecialchars($row['eid']); ?>" />
+                        <button type="submit" name="deletesubmit" style="border:none; background:none; cursor:pointer;">
+                           <i class="fa fa-trash"></i>
+                        </button>
+                       </form>
                     </td>  
                 </tr>  
                 <?php  

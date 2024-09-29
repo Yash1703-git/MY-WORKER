@@ -42,7 +42,7 @@
                 <div id="main">
                     <button class="openbtn" onclick="openNav()">☰</button> 
                 </div>
-                <div class="page-name" style="font-size: 30px; font-weight: bolder;">ATTENDANCE</div>
+                <div class="page-name" style="font-size: 30px; font-weight: bolder; padding-top:20px">ATTENDANCE</div>
                 <button id="openModalBtn"> <i class="fa fa-clock"></i></button>  
                 <!-- The Modal -->
                 <div id="myModal" class="modal">
@@ -77,9 +77,28 @@
             </div>
         </div>
         <div class="container-2">
-            <div class="total-emp">
-                <p>Today</p>
-                <p>25/30</p>
+            <div class="emp" style="display: flex;">
+                <?php
+                include_once("../../db/conection.php");
+                ?>
+                <p style="font-size: 36px;padding-right:16px">Today</p>
+                <div class="live-emp" style="font-size:36px;">
+                <?php
+        $liveempquery = "SELECT COUNT(ename) AS livetotal FROM employees WHERE estatus='Live'";
+        $liveresult = mysqli_query($conn, $liveempquery); 
+        $livetotal = $liveresult ? mysqli_fetch_assoc($liveresult)['livetotal'] : 0; // Check query success
+        ?>
+        <?php echo "$livetotal"; ?>
+                </div>
+                <p style="font-size:36px;">/</p>
+                <div class="totalemp" style="font-size:36px;">
+                <?php
+        $empquery = "SELECT COUNT(ename) AS etotal FROM employees";
+        $result = mysqli_query($conn, $empquery); 
+        $etotal = $result ? mysqli_fetch_assoc($result)['etotal'] : 0; // Check query success
+        ?>
+         <?php echo $etotal; ?>
+                </div>
             </div>
             <div class="section-button">
                 <button id="In-section" name="In section"><a href="">IN SECTION</a></button>
