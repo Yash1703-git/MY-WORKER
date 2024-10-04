@@ -130,17 +130,19 @@
             <div id="emp-image" class="emp-image">
                <img  src="../assets/emp.jpg" style="width:100%;height:100%" />
             </div>
-            <div id="admin-image" style="width:100%;height:100%">
-               <img  src="../assets/emp.jpg" style="width:100%;height:100%"/>
+            <div id="admin-image" style="width:100%;height:90vh;">
+               <img  src="../assets/admin-1.jpg" style="width:100%;height:100%;"/>
             </div>
          </div>
          <!-- right -->
-         <div id="right-container" style="width: 50%; height:100%;">
+         <div id="right-container">
             <!-- EMPLOYEE FORM -->
             <div id="emp-form">
                <div class="emp-form-container">
                <h1>welcome</h1>
-                  <p style="right:36vh;  position: absoult; font-family: Poppins;font-size: 30px;font-weight: bolder;color: #5F9FFF;background-color: #FCFCFC;padding: 10px;">EMPLOYEE LOGIN</p>
+               <div class="header">
+                     <h2>Employee Login</h2>
+                  </div>
                   <form action="" method="post">
                      <h6 for="employee-id">Employee Unique ID</h6>
                      <input type="text" id="employee-id" name="employee-id" placeholder="Enter your unique ID">
@@ -152,9 +154,12 @@
                </div>
             </div>
             <!-- ADMIN FORM  -->
-            <div id="admin-form" style="width:100%; height:100vh;overflow: hidden;">
+            <div id="admin-form">
             <div class="emp-form-container">
-                  <p style="right:39vh;  position:absoult; font-family: Poppins;font-size: 30px; font-weight: bolder; color: #5F9FFF;background-color: #FCFCFC;padding: 10px;">ADMIN LOGIN</p>
+            <h1>welcome</h1>
+               <div class="header">
+                     <h2>Admin Login</h2>
+                  </div>
                   <form action="" method="post">
                   <span style="color:red"><?php echo $aerror ?></span>
                      <h6 for="employee-id">EMAIL ID</h6>
