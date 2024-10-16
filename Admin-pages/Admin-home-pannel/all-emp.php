@@ -174,7 +174,7 @@
         ?>
         <!-- All Employees Table -->
         <div class="container-2">
-            <table>
+            <table style="border-collapse: collapse;">
                 <tr style="background-color: green;">
                     <th>Name</th>  
                     <th>Mobile Number</th>  
@@ -206,12 +206,19 @@
                            <i class="fa fa-trash"></i>
                         </button>
                        </form>
+
+                       <div class="print">
+                <button onclick="window.print()">print</button>
+            </div>
                     </td>  
                 </tr>  
                 <?php  
                 }  
                 ?>  
             </table>
+
+            <!-- print button -->
+           
         </div>
     </div>    
 

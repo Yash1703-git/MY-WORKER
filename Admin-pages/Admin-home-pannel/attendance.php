@@ -84,7 +84,7 @@
                 <p style="font-size: 36px;padding-right:16px">Today</p>
                 <div class="live-emp" style="font-size:36px;">
                 <?php
-        $liveempquery = "SELECT COUNT(ename) AS livetotal FROM employees WHERE estatus='Live'";
+        $liveempquery = "SELECT COUNT(ename) AS livetotal FROM employees WHERE estatus='Live' AND adminid=".$_SESSION['adminid'];;
         $liveresult = mysqli_query($conn, $liveempquery); 
         $livetotal = $liveresult ? mysqli_fetch_assoc($liveresult)['livetotal'] : 0; // Check query success
         ?>
@@ -93,7 +93,7 @@
                 <p style="font-size:36px;">/</p>
                 <div class="totalemp" style="font-size:36px;">
                 <?php
-        $empquery = "SELECT COUNT(ename) AS etotal FROM employees";
+        $empquery = "SELECT COUNT(ename) AS etotal FROM employees WHERE adminid=".$_SESSION['adminid'];
         $result = mysqli_query($conn, $empquery); 
         $etotal = $result ? mysqli_fetch_assoc($result)['etotal'] : 0; // Check query success
         ?>

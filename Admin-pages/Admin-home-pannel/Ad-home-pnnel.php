@@ -48,7 +48,7 @@ session_start(); // Start the session
             <a href="#"><img src="../../assets/live employe.png"> Live Employees</a>
             <a href="./../Admin-home-pannel/attendance.php"><img src="../../assets/attends.png"> Attendance</a>
             <a href="#"><img src="../../assets/notification.png"> Notification</a>
-            <a href="../Admin-home-pannel/salary/salary.php"><img src="../../assets/salaerie.png"> Salaries</a> 
+            <a href="./salary/salary.php"><img src="../../assets/salaerie.png"> Salaries</a> 
             <form method="post">
                 <button class="btn-logout" type="submit" name="logout">Logout</button>
             </form>
@@ -69,7 +69,7 @@ session_start(); // Start the session
     <div class="emp-total">
         <!-- Total Employees Query -->
         <?php
-        $empquery = "SELECT COUNT(ename) AS etotal FROM employees";
+        $empquery = "SELECT COUNT(ename) AS etotal FROM employees WHERE adminid=".$_SESSION['adminid'];
         $result = mysqli_query($conn, $empquery); 
         $etotal = $result ? mysqli_fetch_assoc($result)['etotal'] : 0; // Check query success
         ?>
@@ -80,7 +80,7 @@ session_start(); // Start the session
 
         <!-- Live Employees Query -->
         <?php
-        $liveempquery = "SELECT COUNT(ename) AS livetotal FROM employees WHERE estatus='Live'";
+        $liveempquery = "SELECT COUNT(ename) AS livetotal FROM employees WHERE estatus='Live' AND adminid=".$_SESSION['adminid'];
         $liveresult = mysqli_query($conn, $liveempquery); 
         $livetotal = $liveresult ? mysqli_fetch_assoc($liveresult)['livetotal'] : 0; // Check query success
         ?>
@@ -91,7 +91,7 @@ session_start(); // Start the session
 
         <!-- Employees on Gone Query -->
         <?php
-        $Goneempquery = "SELECT COUNT(ename) AS Gonetotal FROM employees WHERE estatus='Gone'";
+        $Goneempquery = "SELECT COUNT(ename) AS Gonetotal FROM employees WHERE estatus='Gone' AND adminid=".$_SESSION['adminid'];
         $Goneresult = mysqli_query($conn, $Goneempquery); 
         $Gonetotal = $Goneresult ? mysqli_fetch_assoc($Goneresult)['Gonetotal'] : 0; // Check query success
         ?>
