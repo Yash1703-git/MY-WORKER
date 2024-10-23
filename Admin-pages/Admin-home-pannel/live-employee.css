@@ -1,0 +1,34 @@
+
+.container-2 {
+    width: 100%; /* Full width for the container */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}
+
+/* General table styles */
+table {
+    font-size: 20px; /* Font size for table text */
+    width: 50vw; /* Table width */
+    margin: 10px; /* Margin around the table */
+}
+
+/* Header and cell styles */
+th, td {
+    border: 2px solid #151414; /* Cell border */
+    text-align: center;/* Center text in cell */
+    font-size: bold;
+    font-size: 24px;
+    padding : 20px;
+}
+
+/* Row height */
+tr {
+     width: 90vw; /* Full width for rows */
+} 
+
+/* Alternate row coloring for better readability */
+tr:nth-child(even) {
+    background-color: #bbb9b9; /* Light gray background for even rows */
+}

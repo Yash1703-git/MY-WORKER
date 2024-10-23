@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attendance</title> 
-    <link rel="stylesheet" href="./Ad-home-pnnel.css">
+    <link rel="stylesheet" href="./home.css">
     <link rel="stylesheet" href="attendance.css">
     <link rel="icon" href="../../assets/logo.jpg">
     <link rel="stylesheet" href="./../../assets/css/all.min.css">
@@ -28,10 +28,11 @@
                         header("Location: ../../Login/login.php");
                     }
                     ?>
+                    <a href="./home.php"><img src="./../../assets/Home.png">HOME</a>
                     <a href="./all-emp.php"><img src="../../assets/employe.png"> Employees </a>
-                    <a href=""><img src="../../assets/live employe.png"> Live Employees</a>
+                    <a href="./live-employee.php"><img src="../../assets/live employe.png"> Live Employees</a>
                     <a href="./attendance.php"><img src="../../assets/attends.png"> Attendance</a>
-                    <a href=""><img src="../../assets/notification.png"> Notification</a>
+                  
                     <a href="./salary/salary.php"><img src="../../assets/salaerie.png"> Salaries</a> 
                     <form method="post">
                         <button class="btn-logout" type="submit" name="logout">Logout</button>

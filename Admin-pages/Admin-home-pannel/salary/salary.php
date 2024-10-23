@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salaery</title>
-    <link rel="stylesheet" href="./../Ad-home-pnnel.css">
+    <link rel="stylesheet" href="./../home.css">
     <link rel="stylesheet" href="salary.css">
     <link rel="icon" href="./../../../assets/logo.jpg">
     <link rel="stylesheet" href="./../../assets/css/all.min.css">

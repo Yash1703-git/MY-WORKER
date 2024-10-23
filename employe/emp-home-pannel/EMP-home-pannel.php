@@ -70,7 +70,7 @@ if (isset($_POST["submit"])) {
         <?php
             // Logout functionality
             if (isset($_POST["logout"])) {
-                unset($_SESSION['adminid']); // Unset admin session
+              unset($_SESSION['myadminid']); // Unset admin session
                 header("Location: ./../../Login/login.php"); // Redirect to login page
                 exit(); // Stop execution after redirect
             }
@@ -78,7 +78,6 @@ if (isset($_POST["submit"])) {
            <a href="./EMP-home-pannel.php"><img src="./../../assets/Home.png" alt="">Home</a>
            <a href="./My-Records"><img src="./../../assets/live employe.png" alt="">My Records</a>
            <a href="./My-attendance"><img src="./../../assets/attends.png" alt="">My Attends</a>
-           <a href="./Notification.php"><img src="./../../assets/notification.png" alt="">Notification</a>
            <a href="./profile-screen.php"><img src="./../../assets/profile.png" alt="">profile</a>
            <form method="post">  
              <button class="btn-logout" type="submit" name="logout">logout</button> 

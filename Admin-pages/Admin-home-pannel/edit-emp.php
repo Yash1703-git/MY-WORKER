@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>edit-employee</title>
     <link rel="stylesheet" href="edit-emp.css">
-    <link rel="stylesheet" href="./Ad-home-pnnel.css">
+    <link rel="stylesheet" href="./home.css">
 </head>
 <body>
    

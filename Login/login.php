@@ -29,7 +29,7 @@
    
    //check already admin logged in
    if (isset($_SESSION['adminid']) && $_SESSION['adminid'] !== null) {
-      header("Location: ../Admin-pages/Admin-home-pannel/Ad-home-pnnel.php");
+      header("Location: ../Admin-pages/Admin-home-pannel/home.php");
       exit(); // Always use exit() after header redirection
   }
   if (isset($_SESSION['myadminid']) && $_SESSION['eid'] !== null) {
@@ -66,7 +66,7 @@
           //
            
             echo "<script type='text/javascript'>alert('Login Successfully');
-            window.location.href='../Admin-pages/Admin-home-pannel/Ad-home-pnnel.php';</script>";
+            window.location.href='../Admin-pages/Admin-home-pannel/home.php';</script>";
         } else{  
           echo "<script type='text/javascript'>alert('Invalid admin id and passwword');</script>";
         }    

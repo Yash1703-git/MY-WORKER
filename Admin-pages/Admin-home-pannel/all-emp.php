@@ -4,10 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="./Ad-home-pnnel.css">
+    <link rel="stylesheet" href="./home.css">
     <link rel="stylesheet" href="all-emp.css">
     <link rel="icon" href="../../assets/logo.jpg">
     <link rel="stylesheet" href="./../../assets/css/all.min.css">
+    <style>
+        @media print {
+            title {
+        display: none; /* This won't work; see below for proper way */
+    }
+
+    /* Hide the print button during print */
+    .print-button {
+        display: none;
+    }
+.nav{
+    display: none;
+}
+    /* You can also hide other elements if necessary */
+    .sidebar, .nav {
+        display: none;
+    }
+
+    .container table {
+        width: 100%;
+        border-collapse: collapse; /* Optional: To ensure borders collapse */
+    }
+    /* Hide the print button during print */
+    .print-button {
+        display: none;
+    }
+}
+        </style>
     <script>
         // Function to open the sidebar
         function openNav() {
@@ -26,6 +54,32 @@
         function confirmDelete() {
             return confirm("Are you sure you want to delete this item?");
         }
+
+    // Function to print the table excluding the last column
+    function printtable() {
+    // Get the table and rows
+    var table = document.querySelector('.container-2 table');
+    var rows = table.querySelectorAll('tr');
+
+    // Hide the last column for printing
+    for (var i = 0; i < rows.length; i++) {
+        var cells = rows[i].querySelectorAll('td, th');
+        if (cells.length > 0) {
+            cells[cells.length - 1].style.display = 'none'; // Hide last cell
+        }
+    }
+    
+    // Print the table
+    window.print();
+
+    // Show the last column again after printing
+    for (var i = 0; i < rows.length; i++) {
+        var cells = rows[i].querySelectorAll('td, th');
+        if (cells.length > 0) {
+            cells[cells.length - 1].style.display = ''; // Show last cell
+        }
+    }
+}
 
     </script>
 </head>
@@ -51,10 +105,10 @@
                     header("Location: ../../Login/login.php");
                 }
                 ?>
+                <a href="./home.php"><img src="./../../assets/Home.png">HOME</a>
                 <a href="./all-emp.php" style="color:#2870B9"><img src="../../assets/employe.png"> Employees</a>
-                <a href="#"><img src="../../assets/live employe.png"> Live Employees</a>
+                <a href="./live-employee.php"><img src="../../assets/live employe.png"> Live Employees</a>
                 <a href="./attendance.php"><img src="../../assets/attends.png"> Attendance</a>
-                <a href="#"><img src="../../assets/notification.png"> Notification</a>
                 <a href="./salary.php"><img src="../../assets/salaerie.png"> Salaries</a> 
                 <form method="post">
                     <button class="btn-logout" type="submit" name="logout">Logout</button>
@@ -174,7 +228,8 @@
         ?>
         <!-- All Employees Table -->
         <div class="container-2">
-            <table style="border-collapse: collapse;">
+            
+            <table style="border-collapse: collapse;" >
                 <tr style="background-color: green;">
                     <th>Name</th>  
                     <th>Mobile Number</th>  
@@ -206,20 +261,15 @@
                            <i class="fa fa-trash"></i>
                         </button>
                        </form>
-
-                       <div class="print">
-                <button onclick="window.print()">print</button>
-            </div>
                     </td>  
                 </tr>  
                 <?php  
                 }  
                 ?>  
             </table>
-
-            <!-- print button -->
-           
-        </div>
+            <button id="printButton" class="print-button" onclick="printtable()">Print </button>
+            </div>
+           <!-- print button -->
     </div>    
 
     <!-- JavaScript for modal functionality -->
