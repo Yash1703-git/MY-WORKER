@@ -44,11 +44,10 @@ session_start(); // Start the session
                 exit(); // Stop execution after redirect
             }
             ?>
-             <a href="./home.php"><img src="./../../assets/Home.png">HOME</a>
+            <a href="./home.php"><img src="./../../assets/Home.png">HOME</a>
             <a href="./all-emp.php"><img src="../../assets/employe.png"> Employees</a>
             <a href="./live-employee.php"><img src="../../assets/live employe.png"> Live Employees</a>
             <a href="./../Admin-home-pannel/attendance.php"><img src="../../assets/attends.png"> Attendance</a>
-          
             <a href="./salary/salary.php"><img src="../../assets/salaerie.png"> Salaries</a> 
             <form method="post">
                 <button class="btn-logout" type="submit" name="logout">Logout</button>
