@@ -1,0 +1,97 @@
+table {
+    font-size: 20px; /* Font size for table text */
+    width: 70%; /* Table width */
+    border: 2px solid #151414; /* Table border */
+    margin: 10px; /* Margin around the table */
+}
+
+/* Header and cell styles */
+th, td {
+    border: 2px solid #151414; /* Cell border */
+    text-align: center; /* Center text in cells */
+    padding: 8px; /* Padding inside cells */
+}
+
+/* Row height */
+tr {
+    height: 90px; /* Fixed height for rows */
+    width: 100%; /* Full width for rows */
+}
+
+/* Alternate row coloring for better readability */
+.container tr:nth-child(even) {
+    background-color: #bbb9b9; /* Light gray background for even rows */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.btn-1{
+    background-color: rgb(2, 156, 245);
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 8px 8px 10px 0px black;
+}
+
+/* modal content */
+
+#mymodal{
+    display: none;
+}
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top of other elements */
+    left: 0; /* Align to left */
+    top: 0; /* Align to top */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+}
+
+.modal-content {
+    font-size: 24px;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Column layout */
+    margin: 5% auto; /* Center the modal vertically and horizontally */
+    padding: 20px; /* Padding inside the modal */
+    border: 1px solid #888; /* Border around the modal */
+    width: 45%; /* Width of the modal */
+    background-color: #7ED4AD;
+    position: relative;
+}
+.information{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal-content i{
+    font-size: 24px;
+    font-weight: bolder;
+    position: absolute;
+    right: 10px;
+}
+.modal-content h1{
+    text-align: center;
+}
+
+
+.modal-content input{
+    padding: 4px;
+    font-size: 20px;
+    width: 40%;
+}
+
+ .modal-content td{
+    text-align: center; /* Center text in cells */
+    padding: 8px; /* Padding inside cells */
+    border: none;
+    padding-left: 50px;
+    padding-right: 50px;
+ }

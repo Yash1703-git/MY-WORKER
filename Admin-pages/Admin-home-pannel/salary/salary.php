@@ -70,9 +70,8 @@
             ?>
         </div>
         <div class="section-button">
-            <button id="Paid-salary" name="Paid salary"><a href="">Paid salary</a></button>
-            <button id="Unpaid-salary" name="Unpaid salary"><a href="">Unpaid salary</a></button>
-            <button id="All-salary" name="All salary"><a href="">All salary</a></button>
+            <button id="Paid-salary" name="salary-form"><a href="./salary-form.php">salary form</a></button>
+            <button id="All-salary" name="All salary"><a href="./all-salary.php">All salary</a></button>
         </div>
     </div>
 </div>

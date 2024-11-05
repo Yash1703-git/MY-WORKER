@@ -63,7 +63,6 @@
             }
             ?>
            <a href="./EMP-home-pannel.php"><img src="./../../assets/Home.png" alt="">Home</a>
-           <a href="./My-Records"><img src="./../../assets/live employe.png" alt="">My Records</a>
            <a href="./My-attendance.php"><img src="./../../assets/attends.png" alt="">My Attends</a>
            <a href="./profile-screen.php"><img src="./../../assets/profile.png" alt="">profile</a>
            <form method="post">  
@@ -119,6 +118,18 @@
                       <td>Salary -:</td>
                       <td>
                       <?php echo htmlspecialchars($row["esalary"])?>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Acc NO -:</td>
+                      <td>
+                      <?php echo htmlspecialchars($row["accno"])?>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>IFSC CODE -:</td>
+                      <td>
+                      <?php echo htmlspecialchars($row["ifsc"])?>
                       </td>
                     </tr>
                   </table>

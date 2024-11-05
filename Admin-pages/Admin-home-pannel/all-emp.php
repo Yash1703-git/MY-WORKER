@@ -135,6 +135,8 @@
                     // Retrieve and sanitize form inputs
                     $ename = $_POST["ename"];
                     $eemail = $_POST["eemail"];
+                    $accno = $_POST["accno"];
+                    $ifsc = $_POST["ifsc"];
                     $emobile = $_POST["emobile"];
                     $ejoiningdate = $_POST["ejoiningdate"];
                     $esalary = $_POST["esalary"];
@@ -143,7 +145,15 @@
                     // Server-side validation
                     if (empty($ename)) {
                         $_serror = "*Please enter name";
-                    } elseif (empty($eemail)) {
+                    }
+                    else if (empty($accno)) {
+                        $serror = "*Please enter Account No!";
+                    }
+                    else if  (empty($ifsc)) {
+                        $serror = "*Please enter IFSC CODE!";
+                    }
+                    
+                    elseif (empty($eemail)) {
                         $_serror = "*Please enter email";
                     } elseif (empty($emobile)) {
                         $_serror = "*Please enter mobile number";
@@ -184,6 +194,8 @@
                     <form method="post">
                         <h1>New Employee</h1>
                         <input type="text" name="ename" placeholder="Enter name" required>
+                        <input type="text" name="accno" placeholder="Bank Account No" >
+                        <input type="text" name="ifsc" placeholder="IFSC CODE" >
                         <input type="email" name="eemail" placeholder="Enter Email" required>
                         <input type="tel" name="emobile" placeholder="Enter Mobile No" required>
                         <input type="date" name="ejoiningdate" required>

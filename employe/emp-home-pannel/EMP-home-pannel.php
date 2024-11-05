@@ -78,7 +78,6 @@ if (isset($_POST["submit"])) {
             }
             ?>
            <a href="./EMP-home-pannel.php"><img src="./../../assets/Home.png" alt="">Home</a>
-           <a href="./My-Records"><img src="./../../assets/live employe.png" alt="">My Records</a>
            <a href="./My-attendance.php"><img src="./../../assets/attends.png" alt="">My Attends</a>
            <a href="./profile-screen.php"><img src="./../../assets/profile.png" alt="">profile</a>
            <form method="post">  
@@ -136,7 +135,7 @@ if (isset($_POST["submit"])) {
                          <select name="markstatus">
                            <option style="display: none;">IN/LEAVE</option>
                            <option value="IN">IN</option>
-                           <option value="OUT">OUT</option>
+                           <!-- <option value="OUT">OUT</option> -->
                            <option value="LEAVE">LEAVE</option>
                          </select>
                         </div>
