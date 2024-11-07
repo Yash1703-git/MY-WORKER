@@ -63,7 +63,8 @@
             }
             ?>
            <a href="./EMP-home-pannel.php"><img src="./../../assets/Home.png" alt="">Home</a>
-           <a href="./My-attendance.php"><img src="./../../assets/attends.png" alt="">My Attends</a>
+           <a href="./My-attendance.php"><img src="./../../assets/attends.png" alt="">My  Attendance</a>
+           <a href="./my-records.php"><img src="./../../assets/salaerie.png" alt="">My Records</a>
            <a href="./profile-screen.php"><img src="./../../assets/profile.png" alt="">profile</a>
            <form method="post">  
              <button class="btn-logout" type="submit" name="logout">logout</button> 

@@ -42,38 +42,7 @@
                 <div id="main">
                     <button class="openbtn" onclick="openNav()">☰</button> 
                 </div>
-                <div class="page-name" style="font-size: 30px; font-weight: bolder; padding-top:20px">ATTENDANCE</div>
-                <button id="openModalBtn"> <i class="fa fa-clock"></i></button>  
-                <!-- The Modal -->
-                <div id="myModal" class="modal">
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <h2>Time Selection</h2>
-                        <!-- In section -->
-                        <h2 style="text-align: left;">In section</h2>
-                        <form id="timeForm">
-                            <label for="fromTime">From:</label>
-                            <input type="time" id="fromTime" name="fromTime" required>
-                            <br>
-                            <label for="toTime">To-:</label>
-                            <input type="time" id="toTime" name="toTime" required>
-                            <br>
-                            <button type="submit">Save</button>
-                        </form>
-                        <!-- out section -->
-                         <hr style="margin: 10px 0px 10px;">
-                         <h2 style="text-align: left;">Out section</h2>
-                        <form id="timeForm">
-                            <label for="fromTime">From:</label>
-                            <input type="time" id="fromTime" name="fromTime" required>
-                            <br>
-                            <label for="toTime">To-:</label>
-                            <input type="time" id="toTime" name="toTime" required>
-                            <br>
-                            <button type="submit">Save</button>
-                        </form>
-                    </div>
-                </div>
+                <div class="page-name" style="font-size: 30px; font-weight: bolder; padding-top:20px;text-align:center;">ATTENDANCE</div>
             </div>
         </div>
         <div class="container-2">
@@ -258,24 +227,7 @@ function showSection(section) {
     document.getElementById('all-section').style.display = (section === 'all') ? 'block' : 'none';
 
 }
-// Modal functionality
-        var modal = document.getElementById("myModal");
-        var btn = document.getElementById("openModalBtn");
-        var span = document.getElementsByClassName("close")[0];
 
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
         document.getElementById("mySidebar").style.width = "0";
             document.getElementById("main").style.marginLeft = "0";
             document.getElementById("main").style.display = "block";

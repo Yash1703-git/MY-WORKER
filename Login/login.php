@@ -108,6 +108,7 @@
          if($count == 1){  
            $_SESSION['myadminid']=$row['adminid'];  
           $_SESSION['eid']=$row['eid'];
+          $_SESSION['euniqueid']=$empid;
           
           //
            

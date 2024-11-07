@@ -150,3 +150,14 @@ tr {
 tr:nth-child(even) {
     background-color: #bbb9b9; /* Light gray background for even rows */
 }
+ .nav{
+    position: relative;
+    
+ }
+.page-name{
+    font-size: 30px; 
+    font-weight: bolder; 
+    padding-top:20px;
+    position: absolute;
+    left: 45%;  
+}

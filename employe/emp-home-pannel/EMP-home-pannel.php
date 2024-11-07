@@ -36,6 +36,7 @@ session_start();
 
 $serror = "";
 if (isset($_POST["submit"])) {
+  date_default_timezone_set('Asia/Kolkata');
     $currentDate = date("d/m/Y");
     $currentTime = date("h:i:s A"); // Corrected time format
     $markstatus = $_POST["markstatus"]; // Removed space
@@ -61,7 +62,7 @@ if (isset($_POST["submit"])) {
     <div class="container">
       <div id="mySidebar" class="sidebar">
         <div class="sidebar-nav">
-        <div style="width: 100%; height: 100%; text-align: center; position: relative; top: 30%;">
+        <div class="com-name">
                 <p><?php echo htmlspecialchars($_SESSION['company'] ?? 'Company'); ?></p>
             </div>
           <div class="sidebar-nav-img">
@@ -78,7 +79,8 @@ if (isset($_POST["submit"])) {
             }
             ?>
            <a href="./EMP-home-pannel.php"><img src="./../../assets/Home.png" alt="">Home</a>
-           <a href="./My-attendance.php"><img src="./../../assets/attends.png" alt="">My Attends</a>
+           <a href="./My-attendance.php"><img src="./../../assets/attends.png" alt="">My  Attendance</a>
+           <a href="./my-records.php"><img src="./../../assets/salaerie.png" alt="">My Records</a>
            <a href="./profile-screen.php"><img src="./../../assets/profile.png" alt="">profile</a>
            <form method="post">  
              <button class="btn-logout" type="submit" name="logout">logout</button> 
