@@ -44,6 +44,7 @@ session_start(); // Start the session
                 exit(); // Stop execution after redirect
             }
             ?>
+            <!-- sidebar -->
             <a href="./home.php"><img src="./../../assets/Home.png">HOME</a>
             <a href="./all-emp.php"><img src="../../assets/employe.png"> Employees</a>
             <a href="./live-employee.php"><img src="../../assets/live employe.png"> Live Employees</a>
