@@ -48,7 +48,7 @@ session_start(); // Start the session
             <a href="#"><img src="../../assets/live employe.png"> Live Employees</a>
             <a href="./../Admin-home-pannel/attendance.php"><img src="../../assets/attends.png"> Attendance</a>
             <a href="#"><img src="../../assets/notification.png"> Notification</a>
-            <a href="../Admin-home-pannel/salary/salary.php"><img src="../../assets/salaerie.png"> Salaries</a> 
+            <a href="./salary/salary.php"><img src="../../assets/salaerie.png"> Salaries</a> 
             <form method="post">
                 <button class="btn-logout" type="submit" name="logout">Logout</button>
             </form>

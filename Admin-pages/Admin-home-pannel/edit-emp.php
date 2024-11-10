@@ -56,8 +56,8 @@
     <form method="post">
                         <h1>Update Employee</h1>
                         <input type="text" name="ename" value="<?php echo $_GET['ename']?>" placeholder="Enter name" required>
-                        <input type="email" name="eemail" value=<?php echo $_GET['eemail']?> placeholder="Enter Email" required>
-                        <input type="tel" name="emobile" value=<?php echo $_GET['emobile']?> placeholder="Enter Mobile No" required>
+                        <input type="email" name="eemail" value="<?php echo $_GET['eemail']?>" placeholder="Enter Email" required>
+                        <input type="tel" name="emobile" value="<?php echo $_GET['emobile']?>" placeholder="Enter Mobile No" required>
                         <input type="date" name="ejoiningdate" value=<?php echo $_GET['ejoiningdate']?> required>
                         <input type="number" name="esalary" value=<?php echo $_GET['esalary']?> placeholder="Salary" required>
                          <select name="estatus" >
