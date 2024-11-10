@@ -1,0 +1,25 @@
+table {
+    font-size: 20px; /* Font size for table text */
+    width: 70%; /* Table width */
+    border: 2px solid #151414; /* Table border */
+    margin: 10px; /* Margin around the table */
+    
+}
+
+/* Header and cell styles */
+th, td {
+    border: 2px solid #151414; /* Cell border */
+    text-align: center; /* Center text in cells */
+    padding: 8px; /* Padding inside cells */
+}
+
+/* Row height */
+tr {
+    height: 90px; /* Fixed height for rows */
+    width: 100%; /* Full width for rows */
+}
+
+/* Alternate row coloring for better readability */
+tr:nth-child(even) {
+    background-color: #bbb9b9; /* Light gray background for even rows */
+}

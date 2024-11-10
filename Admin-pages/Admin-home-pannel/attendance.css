@@ -17,20 +17,18 @@
 
 .section-button{
     display: flex;
-    flex-direction: column;
-    margin-top: 50px;
+    flex-direction: row;
+    
 }
 
 .section-button button {
-    width: 500px;
+    padding: 0px 50px;
     height: 40px;
     font-size: 20px;
    font-weight: bold;
    border: none;
-   border-radius: 10px;
 }
 button+button{
-    margin-top: 130px;
 }
 
 #In-section{
@@ -45,6 +43,12 @@ button+button{
     background: #2870B9;
 
 }
+
+#Leave-section{
+    background-color: lightblue;
+}
+
+
 .section-button a{
     text-decoration: none;
     color: snow; 
@@ -117,4 +121,43 @@ button+button{
     border-radius: 8px;
     font-size: 25px;
   
+}
+
+
+/* table */
+table {
+    font-size: 20px; /* Font size for table text */
+    width: 100%; /* Table width */
+    border: 2px solid #151414; /* Table border */
+    margin: 10px; /* Margin around the table */
+    
+}
+
+/* Header and cell styles */
+th, td {
+    border: 2px solid #151414; /* Cell border */
+    text-align: center; /* Center text in cells */
+    padding: 8px; /* Padding inside cells */
+}
+
+/* Row height */
+tr {
+    height: 90px; /* Fixed height for rows */
+    width: 100%; /* Full width for rows */
+}
+
+/* Alternate row coloring for better readability */
+tr:nth-child(even) {
+    background-color: #bbb9b9; /* Light gray background for even rows */
+}
+ .nav{
+    position: relative;
+    
+ }
+.page-name{
+    font-size: 30px; 
+    font-weight: bolder; 
+    padding-top:20px;
+    position: absolute;
+    left: 45%;  
 }

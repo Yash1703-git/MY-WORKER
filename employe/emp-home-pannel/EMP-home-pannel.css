@@ -8,8 +8,16 @@ body{
     font-family: "../fonts/poppins.ttf";
 } 
 .container{
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
+}
+.com-name{
+    width: 100%; 
+    height: 100%; 
+    text-align: center; 
+    position: relative; 
+    top: 30%;
+    font-size: 24px;
 }
 
 .sidebar {
@@ -69,6 +77,8 @@ body{
 
 .sidebar-nav a{
     margin-top: 10px;
+    text-decoration: none;
+    border-bottom: none;
 }
 
 .sidebar-container{
@@ -122,6 +132,9 @@ body{
 }
 /* nav-bar */
 .Nav-bar{
+    position: sticky;
+    top: 0;
+    right: 0;
     padding: 0px 20px 0px 20px;
     display: flex;
     justify-content:center;
@@ -150,4 +163,149 @@ body{
     border-radius: 20px;
     border: none;
 }
+.container-2{
+        width:100%;
+        height:100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;  
+}
+.btn-attendance{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
     
+}
+.btn-attendance button{
+    width: 40%;
+    display: flex;
+    border:none;
+    padding: 8px;
+    background-color: #FF9730;
+    justify-content: space-evenly;
+    font-size: 24px;
+}
+.notice-pannel{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+.notice-pannel .notice-box{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    border:none;
+    font-size: 24px;
+    border: 2px solid #2c87A4;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+.notice-box .notice-header{
+    text-align: center;
+    border-bottom: 2px solid  #2c87A4;
+    padding: 16px;
+}
+.notice-box .notice-content{
+    padding: 16px;
+
+}
+#myModal{
+    display: none;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(5px);
+    margin: 5% auto; /* 5% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 45%; /* Could be more or less, depending on screen size */
+}
+
+/* Close Button */
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bolder;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-content form{
+    width: 100%;
+    height: 100%;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.modal-content h1{
+    text-align: center;
+}
+
+.status,.message,.btn-reg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 16px;
+    margin: 8px;
+}
+.status select{
+    appearance: none;
+    padding: 10px;
+    font-size: 20px;
+    width: 80%;
+    border: 2px solid  #2c87A4;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.message h3{
+    padding-bottom: 16px;
+    
+}
+.message textarea{
+    width: 80%;
+    border: 2px solid  #2c87A4;
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 20px;
+}
+.btn-reg button{
+    align-items: center;
+    width: 40%;
+    background-color: #FF9730;
+    font-size: 16px;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+

@@ -1,3 +1,5 @@
+
+
 /* General table styles */
 table {
     font-size: 20px; /* Font size for table text */
@@ -33,10 +35,9 @@ td i {
 
 /* Container for aligning elements */
 .container-2 {
-    width: 100%; /* Full width for the container */
-    display: flex; /* Use flexbox for layout */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 /* Add button styles */
@@ -130,3 +131,14 @@ td i {
     border-radius: 8px; /* Rounded corners */
     font-size: 25px; /* Font size for buttons and inputs */
 }
+
+.print-button{
+    background-color: rgb(126, 75, 220);
+     width: 10%;
+     padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 26px;
+      font-weight: bold;
+  }
+

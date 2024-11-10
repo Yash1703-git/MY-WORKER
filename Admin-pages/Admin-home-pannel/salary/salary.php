@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salaery</title>
-    <link rel="stylesheet" href="./../Ad-home-pnnel.css">
+    <link rel="stylesheet" href="./../home.css">
     <link rel="stylesheet" href="salary.css">
     <link rel="icon" href="./../../../assets/logo.jpg">
     <link rel="stylesheet" href="./../../assets/css/all.min.css">
@@ -45,7 +45,7 @@
             <a href="../live-emp.php"><img src="./../../../assets/live employe.png"> Live Employees</a>
             <a href="../attendance.php"><img src="./../../../assets/attends.png"> Attendance</a>
             <a href="#"><img src="./../../../assets/notification.png"> Notification</a>
-            <a href="./salary.php"><img src="./../../../assets/salaerie.png"> Salaries</a> 
+            <a href="./"><img src="./../../../assets/salaerie.png"> Salaries</a> 
             <form method="post">
                 <button class="btn-logout" type="submit" name="logout">Logout</button>
             </form>
@@ -70,9 +70,8 @@
             ?>
         </div>
         <div class="section-button">
-            <button id="Paid-salary" name="Paid salary"><a href="">Paid salary</a></button>
-            <button id="Unpaid-salary" name="Unpaid salary"><a href="">Unpaid salary</a></button>
-            <button id="All-salary" name="All salary"><a href="">All salary</a></button>
+            <button id="Paid-salary" name="salary-form"><a href="./salary-form.php">salary form</a></button>
+            <button id="All-salary" name="All salary"><a href="./all-salary.php">All salary</a></button>
         </div>
     </div>
 </div>

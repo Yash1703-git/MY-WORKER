@@ -1,0 +1,58 @@
+.container-2{
+    width: 100%;
+    height: 100%;
+}
+
+.emp-Name{
+    width: 100%;
+    display: flex;
+    font-size: 24px;
+    font-weight: bold;  
+    gap: 30px;
+    padding: 8px; 
+}
+.box-1{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+/* table formating */
+
+table{
+    border: nones;
+    font-size: 20px; /* Font size for table text */
+    border-radius: 16px;
+    margin: 10px;
+    background-color: rgb(161, 157, 157);
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.3);
+}
+h1{
+    font-size: 30px;
+    text-align: center;
+}
+th,td{
+    /* border: 2px solid #151414; Cell border */
+    text-align: center; /* Center text in cells */
+    padding: 8px; /* Padding inside cells */
+    border: none;
+    padding-left: 50px;
+    padding-right: 50px;
+    
+}
+
+
+tr {
+    height: 90px; /* Fixed height for rows */
+    /* width: 70%; Full width for rows */
+}
+
+.print-button{
+  background-color: rgb(126, 75, 220);
+   width: 40%;
+   padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 26px;
+    font-weight: bold;
+    box-shadow: 5px 15px 15px rgba(0, 0, 0, 0.3);
+}

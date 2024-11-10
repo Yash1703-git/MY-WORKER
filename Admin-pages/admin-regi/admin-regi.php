@@ -76,7 +76,7 @@
             <span style="color:red"><?php echo $serror ?></span>
             <input type="text" name="ucompany" placeholder="Company Name" >
             <input type="text" name="ucompany_type" placeholder="Company Type" >
-            <input type="text" name="uname" placeholder="Admin Name" >
+            <input type="text" name="uname" placeholder="Admin Name" >         
             <input type="email" name="uemail" placeholder="Email Id" >
             <input type="text" name="umobile_no" placeholder="Mobile No"  >
             <input type="password" name="upassword" placeholder="Password" >

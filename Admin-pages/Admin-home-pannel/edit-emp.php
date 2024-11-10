@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>edit-employee</title>
     <link rel="stylesheet" href="edit-emp.css">
+    <link rel="stylesheet" href="./home.css">
 </head>
 <body>
    
@@ -70,9 +71,8 @@
                             <?php }else{ ?>
                             <option value="Live">Live</option>
                             <?php } ?>
-                            
- 
                         </select>
+
                         <button type="submit" name="editsubmit">Save Me</button>
                     </form>
                     </div>
