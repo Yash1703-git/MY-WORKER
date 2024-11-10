@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="Ad-home-pnnel.css">
     <link rel="icon" href="../../assets/logo.jpg">
     <script>
         // Function to open the sidebar
@@ -44,12 +44,12 @@ session_start(); // Start the session
                 exit(); // Stop execution after redirect
             }
             ?>
-            <!-- sidebar -->
             <a href="./home.php"><img src="./../../assets/Home.png">HOME</a>
             <a href="./all-emp.php"><img src="../../assets/employe.png"> Employees</a>
-            <a href="./live-employee.php"><img src="../../assets/live employe.png"> Live Employees</a>
+            <a href="#"><img src="../../assets/live employe.png"> Live Employees</a>
             <a href="./../Admin-home-pannel/attendance.php"><img src="../../assets/attends.png"> Attendance</a>
-            <a href="./salary/salary.php"><img src="../../assets/salaerie.png"> Salaries</a> 
+            <a href="#"><img src="../../assets/notification.png"> Notification</a>
+            <a href="../Admin-home-pannel/salary/salary.php"><img src="../../assets/salaerie.png"> Salaries</a> 
             <form method="post">
                 <button class="btn-logout" type="submit" name="logout">Logout</button>
             </form>
@@ -70,7 +70,7 @@ session_start(); // Start the session
     <div class="emp-total">
         <!-- Total Employees Query -->
         <?php
-        $empquery = "SELECT COUNT(ename) AS etotal FROM employees WHERE adminid=".$_SESSION['adminid'];
+        $empquery = "SELECT COUNT(ename) AS etotal FROM employees";
         $result = mysqli_query($conn, $empquery); 
         $etotal = $result ? mysqli_fetch_assoc($result)['etotal'] : 0; // Check query success
         ?>
@@ -81,7 +81,7 @@ session_start(); // Start the session
 
         <!-- Live Employees Query -->
         <?php
-        $liveempquery = "SELECT COUNT(ename) AS livetotal FROM employees WHERE estatus='Live' AND adminid=".$_SESSION['adminid'];
+        $liveempquery = "SELECT COUNT(ename) AS livetotal FROM employees WHERE estatus='Live'";
         $liveresult = mysqli_query($conn, $liveempquery); 
         $livetotal = $liveresult ? mysqli_fetch_assoc($liveresult)['livetotal'] : 0; // Check query success
         ?>
@@ -92,7 +92,7 @@ session_start(); // Start the session
 
         <!-- Employees on Gone Query -->
         <?php
-        $Goneempquery = "SELECT COUNT(ename) AS Gonetotal FROM employees WHERE estatus='Gone' AND adminid=".$_SESSION['adminid'];
+        $Goneempquery = "SELECT COUNT(ename) AS Gonetotal FROM employees WHERE estatus='Gone'";
         $Goneresult = mysqli_query($conn, $Goneempquery); 
         $Gonetotal = $Goneresult ? mysqli_fetch_assoc($Goneresult)['Gonetotal'] : 0; // Check query success
         ?>
