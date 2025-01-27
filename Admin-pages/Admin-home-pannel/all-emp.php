@@ -129,7 +129,6 @@
                 <?php
                 include_once("./../../db/conection.php"); // Database connection
                 $_serror = ""; // Initialize error message
-
                 // Handle form submission for adding an employee
                 if (isset($_POST["submit"])) {
                     // Retrieve and sanitize form inputs
@@ -140,6 +139,8 @@
                     $emobile = $_POST["emobile"];
                     $ejoiningdate = $_POST["ejoiningdate"];
                     $esalary = $_POST["esalary"];
+                    $eaadhar = $_POST["eaadhar"];
+                    $epan = $_POST["epan"];
                     $estatus = $_POST["estatus"];
                     
                     // Server-side validation
@@ -161,7 +162,11 @@
                         $_serror = "*Please enter joining date";
                     } elseif (empty($esalary)) {
                         $_serror = "*Please enter salary";
-                    } elseif (empty($estatus)) {
+                    } elseif (empty($eaadhar)) {
+                        $_serror = "*Please enter Aadhar No";
+                    }elseif (empty($epan)) {
+                        $_serror = "*Please enter PAN No";
+                    }elseif (empty($estatus)) {
                         $_serror = "*Please enter status";
                     } else {
                         // Hash the mobile number for password
@@ -176,8 +181,8 @@
                         $adminid = $_SESSION['adminid'];
 
                         // Insert query
-                        $sql = "INSERT INTO `employees`( `ename`, `emobile`, `eemail`, `ejoiningdate`, `esalary`, `estatus`, `euniqueid`, `epassword`, `adminid`)
-                                VALUES ('$ename', '$emobile', '$eemail', '$ejoiningdate', $esalary, '$estatus', '$euniqueid', '$hashed_password', $adminid)";
+                        $sql = "INSERT INTO `employees`( `ename`,`accno`,`ifsc`, `emobile`, `eemail`, `ejoiningdate`, `esalary`,`eaadhar`,`epan`, `estatus`, `euniqueid`, `epassword`, `adminid`)
+                                VALUES ('$ename','$accno','$ifsc', '$emobile', '$eemail', '$ejoiningdate', $esalary,'$eaadhar','$epan', '$estatus', '$euniqueid', '$hashed_password', $adminid)";
 
                         if ($conn->query($sql) === TRUE) {
                             echo "<script type='text/javascript'>alert('Account registered successfully');
@@ -194,13 +199,14 @@
                     <form method="post">
                         <h1>New Employee</h1>
                         <input type="text" name="ename" placeholder="Enter name" required>
-                        <input type="text" name="ename" placeholder="Enter name" required>
                         <input type="text" name="accno" placeholder="Bank Account No" >
                         <input type="text" name="ifsc" placeholder="IFSC CODE" >
                         <input type="email" name="eemail" placeholder="Enter Email" required>
                         <input type="tel" name="emobile" placeholder="Enter Mobile No" required>
                         <input type="date" name="ejoiningdate" required>
                         <input type="number" name="esalary" placeholder="Salary" required>
+                        <input type="text" name="eaadhar" placeholder="Aadhar No" maxlength="12" minlength="12" pattern="\d{12}" required>
+                        <input type="text" name="epan" placeholder="Pan No" maxlength="10" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" required>
                         <!-- <input type="text" name="estatus" placeholder="Live/Gone" required> -->
                          <select name="estatus">
                             <option>Live</option>
@@ -245,6 +251,8 @@
             <table style="border-collapse: collapse;" >
                 <tr style="background-color: green;">
                     <th>Name</th>  
+                    <th>Aadhar No</th>   
+                    <th>Pan No</th>  
                     <th>Mobile Number</th>  
                     <th>Email</th>  
                     <th>Joining Date</th>  
@@ -253,10 +261,12 @@
                 </tr>
                 <?php  
                 while ($row = mysqli_fetch_array($result)) {  
-                    $editurl="edit-emp.php?ename=".htmlspecialchars($row["ename"])."&emobile=".htmlspecialchars($row["emobile"])."&eemail=".htmlspecialchars($row["eemail"])."&ejoiningdate=".htmlspecialchars($row["ejoiningdate"])."&esalary=".htmlspecialchars($row["esalary"])."&estatus=".htmlspecialchars($row["estatus"])."&eid=".$row["eid"];
+                    $editurl="edit-emp.php?ename=".htmlspecialchars($row["ename"])."&eaadhar=".htmlspecialchars($row["eaadhar"])."&epan=".htmlspecialchars($row["epan"])."&emobile=".htmlspecialchars($row["emobile"])."&eemail=".htmlspecialchars($row["eemail"])."&ejoiningdate=".htmlspecialchars($row["ejoiningdate"])."&esalary=".htmlspecialchars($row["esalary"])."&estatus=".htmlspecialchars($row["estatus"])."&eid=".$row["eid"];
                 ?>  
                 <tr>  
                     <td><?php echo htmlspecialchars($row["ename"]); ?></td>  
+                    <td><?php echo htmlspecialchars($row["eaadhar"]); ?></td>  
+                    <td><?php echo htmlspecialchars($row["epan"]); ?></td>  
                     <td><?php echo htmlspecialchars($row["emobile"]); ?></td>  
                     <td><?php echo htmlspecialchars($row["eemail"]); ?></td>  
                     <td><?php echo htmlspecialchars($row["ejoiningdate"]); ?></td>  
@@ -308,6 +318,30 @@
                 modal.style.display = "none";
             }
         }
+        
+        const aadharInput = document.getElementById('aadhar');
+        const aadharError = document.getElementById('aadharError');
+        if (!/^\d{12}$/.test(aadharInput.value)) {
+            aadharError.textContent = 'Please enter a valid 12-digit Aadhaar number.';
+            valid = false;
+        } else {
+            aadharError.textContent = '';
+        }
+
+        // PAN validation
+        const panInput = document.getElementById('pan');
+        const panError = document.getElementById('panError');
+        if (!/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(panInput.value)) {
+            panError.textContent = 'Please enter a valid PAN number (e.g., AAAAA1234A).';
+            valid = false;
+        } else {
+            panError.textContent = '';
+        }
+
+        if (!valid) {
+            event.preventDefault();
+        }
+
     </script>
 </body>
 </html>
