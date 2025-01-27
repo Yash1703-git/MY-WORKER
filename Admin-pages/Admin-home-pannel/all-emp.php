@@ -194,6 +194,7 @@
                     <form method="post">
                         <h1>New Employee</h1>
                         <input type="text" name="ename" placeholder="Enter name" required>
+                        <input type="text" name="ename" placeholder="Enter name" required>
                         <input type="text" name="accno" placeholder="Bank Account No" >
                         <input type="text" name="ifsc" placeholder="IFSC CODE" >
                         <input type="email" name="eemail" placeholder="Enter Email" required>
