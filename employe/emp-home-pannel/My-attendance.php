@@ -63,7 +63,7 @@
   <div class="container">
     <div id="mySidebar" class="sidebar">
       <div class="sidebar-nav">
-        <div style="width: 100%; height: 100%; text-align: center; position: relative; top: 30%;">
+        <div class="com-name">
           <p><?php echo htmlspecialchars($_SESSION['company'] ?? 'Company'); ?></p>
         </div>
         <div class="sidebar-nav-img">

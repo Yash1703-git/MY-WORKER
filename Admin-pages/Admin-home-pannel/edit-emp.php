@@ -20,6 +20,8 @@
                     $ename = $_POST["ename"];
                     $eemail = $_POST["eemail"];
                     $emobile = $_POST["emobile"];
+                    $eaadhar = $_POST["eaadhar"];
+                    $epan = $_POST["epan"];
                     $ejoiningdate = $_POST["ejoiningdate"];
                     $esalary = $_POST["esalary"];
                     $estatus = $_POST["estatus"];
@@ -31,6 +33,10 @@
                         $_serror = "*Please enter email";
                     } elseif (empty($emobile)) {
                         $_serror = "*Please enter mobile number";
+                    }elseif (empty($eaadhar)) {
+                        $_serror = "*Please enter Aadhar number";
+                    }elseif (empty($epan)) {
+                        $_serror = "*Please enter PAN number";
                     } elseif (empty($ejoiningdate)) {
                         $_serror = "*Please enter joining date";
                     } elseif (empty($esalary)) {
@@ -41,7 +47,7 @@
                        
                            $eid=$_GET['eid'];
                         // Insert query
-                        $sql = "UPDATE `employees` SET `ename`='$ename',`emobile`='$emobile',`eemail`='$eemail',`ejoiningdate`='$ejoiningdate',`esalary`=$esalary,`estatus`='$estatus' WHERE eid=$eid";
+                        $sql = "UPDATE `employees` SET `ename`='$ename',`emobile`='$emobile',`eemail`='$eemail',`eaadhar`='$eaadhar',`epan`='$epan',`ejoiningdate`='$ejoiningdate',`esalary`=$esalary,`estatus`='$estatus' WHERE eid=$eid";
                
 
                         if ($conn->query($sql) === TRUE) {
@@ -59,6 +65,8 @@
                         <input type="text" name="ename" value="<?php echo $_GET['ename']?>" placeholder="Enter name" required>
                         <input type="email" name="eemail" value="<?php echo $_GET['eemail']?>" placeholder="Enter Email" required>
                         <input type="tel" name="emobile" value="<?php echo $_GET['emobile']?>" placeholder="Enter Mobile No" required>
+                        <input type="text" name="eaadhar" value="<?php echo $_GET['eaadhar']?>"  required>
+                        <input type="text" name="epan" value="<?php echo $_GET['epan']?>"  required>
                         <input type="date" name="ejoiningdate" value=<?php echo $_GET['ejoiningdate']?> required>
                         <input type="number" name="esalary" value=<?php echo $_GET['esalary']?> placeholder="Salary" required>
                          <select name="estatus" >

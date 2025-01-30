@@ -93,10 +93,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['pay'])) {
     // Prepare the data to store
     $sempid = $_POST["euniqueid"];
     $sename = $_POST["ename"];
-    $samountpaid = $_POST["esalary"];
+    $samountpaid = $_POST["paidsalary"];
     $saccno = $_POST["accno"];
     $sifsc = $_POST["ifsc"];
-    $snoleaves = $_POST['snoleaves'];
+    $snoleaves = intval($_POST['snoleaves']);
     $adminid = $_SESSION['adminid']; // Ensure you have the admin ID from the session
     $currentDate = date("d/m/Y");
     $cmonth=date("m");
@@ -136,6 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['pay'])) {
                 <input type="hidden" name="ename" id="modal-name-input">
                 <input type="hidden" name="accno" id="modal-accno-input">
                 <input type="hidden" name="ifsc" id="modal-ifsc-input">
+                <input type="hidden" name="esalary" id="modal-salary-input">
                 
                 <table class="info">
                     <tr>
@@ -143,8 +144,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['pay'])) {
                         <td><span id="modal-uniqueid-display"></span></td>
                     </tr>
                     <tr>
-                        <td>Salary:</td>
-                        <td><input name="esalary" id="modal-salary-input" class="modal-salary-input" type="text" required></td>
+                        <td>Total Salary:</td>
+                        <td><span id="modal-salary-display"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Updated salary:</td>
+                        <td><span id="updated-salary-display"></span>
+                             
+                    </td>
                     </tr>
                     <tr>
                         <td>ACC NO:</td>
@@ -156,7 +163,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['pay'])) {
                     </tr>
                     <tr>
                         <td>No of Leaves:</td>
-                        <td><input type="text" name="snoleaves" value="0" required></td>
+                        <td>
+                        <select name="snoleaves"  oninput="handleLeavesInputChange(this.value)" id="leaves-dropdown">
+                            <!-- Options will be dynamically added here -->
+                        </select>
+
+                          </tr>
+                    <tr>
+                        <td>Amount Paid:</td>
+                        <td><input type="text" name="paidsalary" id="paidsalary"  value="0"  required></td>
                     </tr>
                 </table>
                 <button type="submit" name="pay" class="btn-1">SEND</button>
@@ -178,15 +193,50 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['pay'])) {
     // Populate hidden inputs
     document.getElementById("modal-uniqueid-input").value = employee.uniqueid;
     document.getElementById("modal-name-input").value = employee.name;
+// dropdown for no of leaves
+const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth() + 1; // getMonth() is 0-based
+    const noofdaysincurrentmonth = new Date(year, month, 0).getDate();
+
+    // Get the dropdown element
+    const leavesDropdown = document.getElementById("leaves-dropdown");
+
+    // Dynamically populate the dropdown
+    for (let i = 0; i <= noofdaysincurrentmonth; i++) {
+        const option = document.createElement("option");
+        option.value = i;
+        option.textContent = i;
+        leavesDropdown.appendChild(option);
+    }
+
+    var noofleaves=document.getElementById("leaves-dropdown").value 
 
     // Set the salary input value
-    document.getElementById("modal-salary-input").value = employee.salary; // Ensure this is correctly referenced
-
+    document.getElementById("modal-salary-display").innerHTML = employee.salary; // Ensure this is correctly referenced
+    document.getElementById("updated-salary-display").innerHTML=employee.salary;
+    document.getElementById("paidsalary").value = employee.salary;
     document.getElementById("modal-accno-input").value = employee.accno;
     document.getElementById("modal-ifsc-input").value = employee.ifsc;
 
     // Show the modal
     document.getElementById("mymodal").style.display = "block";
+}
+function handleLeavesInputChange(value){
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth() + 1; // getMonth() returns 0-based month
+    const noofdaysincurrentmonth = new Date(year, month, 0).getDate();
+
+    // Get the modal salary
+    const modalSalary = parseFloat(document.getElementById("modal-salary-display").innerHTML);
+
+    // Calculate the updated salary
+    const updatedSalary = (modalSalary / noofdaysincurrentmonth) * (noofdaysincurrentmonth - value);
+
+    // Update the display
+    document.getElementById("updated-salary-display").innerHTML = updatedSalary.toFixed(2);
+    document.getElementById("paidsalary").value = updatedSalary.toFixed(2);
 }
 function closemodal(){
 

@@ -41,11 +41,11 @@
                 exit(); // Ensure script stops after redirection
             }
             ?>
-            <a href="../all-emp.php"><img src="./../../../assets/employe.png"> Employees</a>
-            <a href="../live-emp.php"><img src="./../../../assets/live employe.png"> Live Employees</a>
-            <a href="../attendance.php"><img src="./../../../assets/attends.png"> Attendance</a>
-            <a href="#"><img src="./../../../assets/notification.png"> Notification</a>
-            <a href="./"><img src="./../../../assets/salaerie.png"> Salaries</a> 
+           <a href="./../home.php"><img src="./../../../assets/Home.png">HOME</a>
+            <a href="./../all-emp.php"><img src="../../../assets/employe.png"> Employees</a>
+            <a href="./../live-employee.php"><img src="../../../assets/live employe.png"> Live Employees</a>
+            <a href="./../attendance.php"><img src="../../../assets/attends.png"> Attendance</a>
+            <a href="./../salary/salary.php"><img src="../../../assets/salaerie.png"> Salaries</a> 
             <form method="post">
                 <button class="btn-logout" type="submit" name="logout">Logout</button>
             </form>

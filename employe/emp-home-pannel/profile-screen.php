@@ -49,6 +49,9 @@
     <div class="container">
     <div id="mySidebar" class="sidebar">
         <div class="sidebar-nav">
+        <div class="com-name">
+          <p><?php echo htmlspecialchars($_SESSION['company'] ?? 'Company'); ?></p>
+        </div>
           <div class="sidebar-nav-img">
           </div>
           <a href="javascript:void(0)" class="closebtn" id="closebtn" onclick="closeNav()">×</a>
@@ -87,18 +90,30 @@
             ?>
             <div class="box-1">
                 <div class="emp-Name">
-                <h1><?php echo htmlspecialchars($row["ename"])?></th>
                   <table border="1">
-                   
                     <tr>
-                      <td>Unique ID -:</td>
                       <td>
-                      <?php echo ($row["euniqueid"]); ?>
+                      <div>
+                        <img src=<?php 
+                        if($row["photo"]==""){
+                            echo "./../../Admin-pages/Admin-home-pannel/uploads/no-image.jpg"; 
+                        }else{
+                        echo "../../Admin-pages/Admin-home-pannel/uploads/".$row["photo"]; 
+                        }
+                        ?> 
+                         style="width: 100px; height: 100px; border-radius: 5%; margin-bottom:10px">
+                      </div>
+                      </td>
+                      <td>
+                        <div class="info" style="display: flex;flex-direction:column; gap:20px;">
+                          <h1><?php echo htmlspecialchars($row["ename"])?></h1>
+                          <h1> <?php echo ($row["euniqueid"]); ?></h1>
+                        </div>
                       </td>
                     </tr>
-                    
+                  
                     <tr>
-                      <td>Mobile No -:</td>
+                    <td>Mobile No -:</td>
                       <td>
                     <?php echo htmlspecialchars($row["emobile"])?>
                       </td>
@@ -133,6 +148,7 @@
                       <?php echo htmlspecialchars($row["ifsc"])?>
                       </td>
                     </tr>
+
                   </table>
                     
                 </div>

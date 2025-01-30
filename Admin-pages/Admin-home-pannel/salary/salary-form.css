@@ -87,7 +87,11 @@ tr {
     font-size: 20px;
     width: 40%;
 }
-
+#leaves-dropdown{
+    padding: 4px;
+    font-size: 20px;
+    width: 40%;
+}
  .modal-content td{
     text-align: center; /* Center text in cells */
     padding: 8px; /* Padding inside cells */
